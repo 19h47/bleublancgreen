@@ -8,7 +8,7 @@
 		<link rel="canonical" href="{{ canonical_url }}" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
 
-		<link href="https://fonts.googleapis.com/css2?family=Lexend+Exa&family=Rubik&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Lexend+Exa&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
 
 		{{
 			content_for_header
@@ -85,6 +85,34 @@
 
 		<main role="main">
 			{{ content_for_layout }}
+
+			<div class="Policy">
+				<div class="Site-container">
+					<div class="row">
+						<div class="col-4 text-align-center">
+							<svg><use xlink:href="#golf-flag" href="#golf-flag"></use></svg>
+							<h3>Une fabrication 100 % française</h3>
+							<div class="Policy__content">
+								<p>Nos partenaires sont français.<br />La conception de nos vêtement soutient le tissu industriel local.</p>
+							</div>
+						</div>
+						<div class="col-4 text-align-center">
+							<svg><use xlink:href="#award" href="#award"></use></svg>
+							<h3>La qualité</h3>
+							<div class="Policy__content"><p>Des vêtements durables, des tissus de qualité et des coupes précises.</p></div>
+						</div>
+						<div class="col-4 text-align-center">
+							<svg><use xlink:href="#golf-uniform" href="#golf-uniform"></use></svg>
+							<h3>Le style BBG</h3>
+
+							<div class="Policy__content">
+								<p>Des essentiels, des ensembles harmonieux, une modernité dosée et un soin apporté au détail.</p>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
 		</main>
 
 		<footer class="Footer">
@@ -127,12 +155,7 @@
 						</ul>
 					</div>
 					<div class="col-6 d-flex justify-content-end">
-						<div class="Socials">
-							<ul class="Socials__items">
-								<li class="Socials__item"><a href="https://instagram.com"><svg><use xlink:href="#instagram" href="#instagram"></use></svg></a></li>
-								<li class="Socials__item"><a href="https://facebook.com"><svg><use xlink:href="#facebook" href="#facebook"></use></svg></a></li>
-							</ul>
-						</div>
+						{% include 'socials' %}
 					</div>
 				</div>
 			</div>

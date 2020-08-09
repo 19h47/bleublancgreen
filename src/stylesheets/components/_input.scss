@@ -28,6 +28,8 @@
 	}
 
 	&[type='submit'] {
+		@extend %text-transform-uppercase;
+
 		background-color: the_color(green, lime);
 	}
 }

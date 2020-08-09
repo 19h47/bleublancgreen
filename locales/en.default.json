@@ -41,6 +41,9 @@
 			"log_out": "Log out",
 			"log_in": "Log in",
 			"create_account": "Create account"
+		},
+		"footer": {
+			"social_platform": "{{ name }} on {{ platform }}"
 		}
 	},
 	"newsletter_form": {

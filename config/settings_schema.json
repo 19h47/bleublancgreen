@@ -4,8 +4,42 @@
 		"theme_name": "Bleu Blanc Green",
 		"theme_version": "0.0.0",
 		"theme_author": "19h47",
-		"theme_support_email": "jeremylevron@19h47.fr",
 		"theme_documentation_url": "https://github.com/19h47/bleublancgreen",
 		"theme_support_url": "https://github.com/19h47/bleublancgreen/issues"
+	},
+	{
+		"name": "Social media",
+		"settings": [
+			{
+				"type": "header",
+				"content": "Social sharing image"
+			},
+			{
+				"type": "image_picker",
+				"id": "share_image",
+				"label": "Image",
+				"info": "Shown when sharing a link on social media. [Learn more](https://help.shopify.com/manual/using-themes/troubleshooting/showing-social-media-thumbnail-images/) about image thumbnails."
+			},
+			{
+				"type": "header",
+				"content": "Social sharing options"
+			},
+			{
+				"type": "header",
+				"content": "Sharing links"
+			},
+			{
+				"type": "text",
+				"id": "social_facebook_link",
+				"label": "Facebook link",
+				"slug": "facebook"
+			},
+			{
+				"type": "text",
+				"id": "social_instagram_link",
+				"label": "Instagram link",
+				"slug": "instagram"
+			}
+		]
 	}
 ]

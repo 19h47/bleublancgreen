@@ -1,0 +1,36 @@
+/**
+ * Policy
+ *
+ *
+ *
+ *
+ *
+ */
+.Policy {
+	@include padding(top $base-line-height-px * 3 bottom $base-line-height-px * 3);
+
+	background-color: the_color(blue, very-dark);
+	color: the_color(white);
+
+	h3 {
+		@extend %font-weight-medium;
+		@include margin(top $base-line-height-px bottom $base-line-height-px);
+	}
+
+	svg {
+		@include size(100%, $base-line-height-px * 2);
+	}
+
+	&__content {
+		p {
+			@extend %font-family-title;
+
+			&:first-child {
+				@include margin(top 0);
+			}
+			&:last-child {
+				@include margin(bottom 0);
+			}
+		}
+	}
+}

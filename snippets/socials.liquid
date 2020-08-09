@@ -1,0 +1,18 @@
+{% comment %} Socials {% endcomment %}
+{%- assign social_accounts = 'Facebook, Instagram' | split: ', ' -%}
+
+<div class="Socials">
+	<ul class="Socials__items">
+		{% for social in social_accounts %}
+		 	{%- assign social_handle = social | handleize -%}
+
+			{% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
+
+			<li class="Socials__item">
+				<a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}" target="_blank" rel="noopener noreferer">
+					<svg><use xlink:href="#{{ social_handle }}" href="#{{ social_handle }}"></use></svg>
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+</div>
