@@ -1,0 +1,38 @@
+/**
+ * Socials
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+.Socials {
+	&__items {
+		@extend .d-flex;
+		@extend %list-style-type-none;
+	}
+
+	&__item {
+		@include margin(right $base-line-height-px / 2 left $base-line-height-px / 2);
+		@include size($base-line-height-px);
+
+		a {
+			@extend .d-block;
+		}
+
+		svg {
+			@include size($base-line-height-px);
+
+			max-height: 100%;
+			max-width: 100%;
+		}
+
+		&:first-child {
+			@include margin(left 0);
+		}
+		&:last-child {
+			@include margin(right 0);
+		}
+	}
+}

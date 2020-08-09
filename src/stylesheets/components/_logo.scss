@@ -1,0 +1,13 @@
+/**
+ * Logo
+ *
+ *
+ *
+ */
+.Logo {
+	@include margin(top $base-line-height-px bottom $base-line-height-px);
+
+	@extend .d-flex, .align-items-center, .justify-content-center;
+
+	height: $base-line-height * 4px;
+}

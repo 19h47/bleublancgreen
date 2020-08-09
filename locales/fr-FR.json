@@ -1,0 +1,13 @@
+{
+	"customer": {
+		"register": {
+			"title": "Créer un compte",
+			"first_name": "Prénom",
+			"last_name": "Nom",
+			"email": "Courriel",
+			"submit": "Créer",
+			"cancel": "Retour à la boutique",
+			"password": "Mot de passe"
+		}
+	}
+}

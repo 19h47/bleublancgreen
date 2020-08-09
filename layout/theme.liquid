@@ -7,18 +7,56 @@
 		<meta name="description" content="{{ page_description | escape }}" />
 		<link rel="canonical" href="{{ canonical_url }}" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+
+		<link href="https://fonts.googleapis.com/css2?family=Lexend+Exa&family=Rubik&display=swap" rel="stylesheet">
+
 		{{
 			content_for_header
 		}}
 		<!-- Header hook for plugins -->
-		{{
-			"application.scss.css" | asset_url | stylesheet_tag
-		}}
-		{{
-			"application.js" | asset_url | script_tag
-		}}
+		{{ "application.scss.css" | asset_url | stylesheet_tag }}
 	</head>
 	<body>
+
+		<div id="svg-sprite" class="d-none">{% include 'icons' %}</div>
+
+		<header class="Header">
+			<div class="Site-container">
+				<div class="row">
+					<div class="col-6">
+						<div class="Shop-name">
+							<a href="{{ shop.secure_url }}">{{ shop.name }}</a>
+						</div>
+					</div>
+					<div class="col-6">
+						<div class="Menu">
+							<a href="/cart">cart</a>
+							{% if shop.customer_accounts_enabled %}
+								{% if customer  %}
+									<a href="/account">Your Account</a>
+								{% else %}
+									{{ 'Log in' | customer_login_link }}
+									{% if shop.customer_accounts_optional %}
+									<span>or</span>
+									{{ 'Create an account' | customer_register_link }}
+									{% endif %}
+								{% endif %}
+							{% endif %}
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div class="Logo">
+							<a class="d-inline-block" href="{{ shop.secure_url }}">
+								<img src="{{ 'logo.svg' | asset_url }}" width="277" height="100" alt="{{ shop.description }}">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
 		{% for link in linklists.main-menu.links %}
 			{% assign child_list_handle = link.title | handleize %}
 
@@ -48,5 +86,58 @@
 		<main role="main">
 			{{ content_for_layout }}
 		</main>
+
+		<footer class="Footer">
+			<div class="Site-container">
+				<div class="row">
+					<div class="col-4">
+						<h3 class="Footer__title">{{ shop.name }}</h3>
+						<ul class="Footer__items">
+							<li class="Footer__item"><a href="">L’esprit BBG</a></li>
+							<li class="Footer__item"><a href="">Contactez-nous</a></li>
+							<li class="Footer__item"><a href="">Mentions légales</a></li>
+							<li class="Footer__item"><a href="">Espace presse ?</a></li>
+						</ul>
+					</div>
+					<div class="col-4">
+						<h3 class="Footer__title">Newsletter</h3>
+						<form class="Form validate" action="" method="post" id="mc-embedded-subscribe-form-footer" name="mc-embedded-subscribe-form" novalidate="true">
+
+							<div class="Form__group">
+								<input type="text" name="FNAME" id="mce-FNAME-footer" value="test" class="d-none">
+								<input type="text" name="LNAME" id="mce-LNAME-footer" value="test" class="d-none">
+								<input type="text" name="MMERGE6" id="mce-MMERGE6-footer" value="test" class="d-none">
+								<input type="text" name="MMERGE4" id="mce-MMERGE4-footer" value="test" class="d-none">
+
+								<input class="Input d-block w-100 margin-bottom-2" type="email" name="EMAIL" id="mce-EMAIL-footer" value="" placeholder="{{ 'newsletter_form.email_placeholder' | t }}" title="The domain portion of the email address is invalid (the portion after the @)." pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" required="">
+								<input class="Input d-block w-100 button" type="submit" value="{{ 'newsletter_form.submit' | t }}" name="subscribe" id="mc-embedded-subscribe">
+								<div class="mc-status"></div>
+							</div>
+							<div class="Form__group" style="position: absolute; left: -5000px;" aria-hidden="true">
+								<input type="text" name="b__" tabindex="-1" value="">
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="row margin-top-6">
+					<div class="col-6">
+						<ul class="Footer__copyright">
+							<li><a href="/">CGV</a></li>
+							<li><a href="/">Livraison et retours</a></li>
+						</ul>
+					</div>
+					<div class="col-6 d-flex justify-content-end">
+						<div class="Socials">
+							<ul class="Socials__items">
+								<li class="Socials__item"><a href="https://instagram.com"><svg><use xlink:href="#instagram" href="#instagram"></use></svg></a></li>
+								<li class="Socials__item"><a href="https://facebook.com"><svg><use xlink:href="#facebook" href="#facebook"></use></svg></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		{{ "application.js" | asset_url | script_tag }}
 	</body>
 </html>

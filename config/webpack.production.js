@@ -14,6 +14,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = merge(common, {
 	output: {
@@ -64,11 +65,15 @@ module.exports = merge(common, {
 		new MiniCssExtractPlugin({
 			filename: 'application.scss.css',
 		}),
+		new CopyPlugin({
+			patterns: [{ from: 'assets/icons.svg', to: '../snippets/icons.liquid' }],
+		}),
 		new CompressionPlugin(),
 		new PurgecssPlugin({
 			paths: glob.sync([
 				path.join(__dirname, '..', 'templates/**/*.liquid'),
-				path.join(__dirname, '..', 'templates/**/*.liquid'),
+				path.join(__dirname, '..', 'layout/**/*.liquid'),
+				path.join(__dirname, '..', 'snippets/**/*.liquid'),
 			]),
 			whitelist: [
 				// page

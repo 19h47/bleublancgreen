@@ -4,5 +4,47 @@
 			"title": "Not found",
 			"subtext_html": "The page you were looking for does not exist"
 		}
+	},
+	"customer": {
+		"register": {
+			"title": "Create Account",
+			"first_name": "First Name",
+			"last_name": "Last Name",
+			"email": "Email",
+			"password": "Password",
+			"submit": "Create",
+			"cancel": "Return to Store"
+		},
+		"login": {
+			"title": "Login",
+			"email": "Email",
+			"password": "Password",
+			"forgot_password": "Forgot your password?",
+			"sign_in": "Sign In",
+			"cancel": "Return to Store",
+			"guest_title": "Continue as a guest",
+			"guest_continue": "Continue"
+		},
+		"recover_password": {
+			"title": "Reset your password",
+			"email": "Email",
+			"submit": "Submit",
+			"cancel": "Cancel",
+			"subtext": "We will send you an email to reset your password.",
+			"success": "We've sent you an email with a link to update your password."
+		}
+	},
+	"layout": {
+		"customer": {
+			"account": "Account",
+			"logged_in_as_html": "Logged in as {{ first_name }}",
+			"log_out": "Log out",
+			"log_in": "Log in",
+			"create_account": "Create account"
+		}
+	},
+	"newsletter_form": {
+		"email_placeholder": "Your email",
+		"submit": "I'm registering!"
 	}
 }

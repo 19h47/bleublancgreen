@@ -1,0 +1,15 @@
+/**
+ *
+ *
+ *
+ *
+ *
+ */
+.Shop-name {
+	@include letter-spacing(200);
+	@extend %font-weight-regular, %text-transform-uppercase;
+
+	font-family: 'Trebuchet MS';
+	font-size: $base-font-size-px;
+	line-height: $base-line-height-px;
+}

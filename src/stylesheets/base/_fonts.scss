@@ -1,0 +1,15 @@
+// Trebuchet MS 400
+@font-face {
+	font-family: 'Trebuchet MS';
+	src: url('../../src/fonts/trebuchet-ms/trebuchet-ms-regular.eot');
+	src: url('../../src/fonts/trebuchet-ms/trebuchet-ms-regular.woff2') format('woff2'),
+		url('../../src/fonts/trebuchet-ms/trebuchet-ms-regular.woff') format('woff'),
+		url('../../src/fonts/trebuchet-ms/trebuchet-ms-regular.eot?#iefix')
+			format('embedded-opentype'),
+		url('../../src/fonts/trebuchet-ms/trebuchet-ms-regular.ttf') format('truetype'),
+		url('../../src/fonts/trebuchet-ms/trebuchet-ms-regular.svg#trebuchet-ms-regular')
+			format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}

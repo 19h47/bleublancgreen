@@ -1,0 +1,34 @@
+/**
+ * Basic typography style for copy text
+ */
+
+// @include reset-selection( get_color( black ), get_color( white ) );
+
+h1,
+.h1 {
+	@extend %font-family-title, %font-weight-regular;
+}
+
+h2,
+.h2 {
+	@extend %font-weight-regular, %font-family-body;
+}
+
+h3,
+.h3 {
+	@extend %font-weight-regular, %font-family-title;
+}
+
+h4,
+.h4 {
+	@extend %font-weight-regular, %font-family-title;
+}
+
+h5,
+.h5 {
+	@extend %font-weight-regular, %font-family-title;
+}
+
+h6,
+.h6 {
+}

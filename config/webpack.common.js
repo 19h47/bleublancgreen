@@ -82,12 +82,13 @@ module.exports = {
 						loader: 'file-loader',
 						options: {
 							name: '[name].[ext]',
-							outputPath: 'fonts/',
-							publicPath: '../fonts/',
+							// outputPath: 'fonts/',
+							// publicPath: '../fonts/',
 						},
 					},
 				],
 			},
+			// Sprite SVG
 			{
 				test: /\.svg$/,
 				exclude: [/img/, /fonts/],
@@ -110,7 +111,6 @@ module.exports = {
 					{
 						loader: 'file-loader',
 						options: {
-							outputPath: 'img/svg',
 							name: '[name].[ext]',
 						},
 					},

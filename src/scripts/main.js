@@ -1,1 +1,1 @@
-console.log('YO!');
+require('./templates/customers/login');

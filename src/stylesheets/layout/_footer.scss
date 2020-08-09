@@ -1,0 +1,49 @@
+/**
+ * Footer
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+.Footer {
+	@include padding(top $base-line-height-px * 3 bottom $base-line-height-px * 3);
+
+	background-color: the_color(blue, very-dark);
+	color: the_color(white);
+
+	&__title {
+		@extend %text-transform-uppercase, %font-family-body;
+		@include letter-spacing(200);
+		@include margin(bottom $base-line-height-px);
+
+		font-size: 18px;
+		line-height: (34/18);
+	}
+
+	&__items {
+		@extend %list-style-type-none;
+	}
+
+	&__item {
+		@extend %text-transform-uppercase;
+		@include letter-spacing(200);
+	}
+
+	&__copyright {
+		@extend %list-style-type-none;
+		@extend .d-flex;
+
+		li {
+			@include margin(right $base-line-height-px / 2 left $base-line-height-px / 2);
+
+			&:first-child {
+				@include margin(left 0);
+			}
+			&:last-child {
+				@include margin(right 0);
+			}
+		}
+	}
+}
