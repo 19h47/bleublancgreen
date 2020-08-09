@@ -31,14 +31,12 @@
 			{
 				"type": "text",
 				"id": "social_facebook_link",
-				"label": "Facebook link",
-				"slug": "facebook"
+				"label": "Facebook link"
 			},
 			{
 				"type": "text",
 				"id": "social_instagram_link",
-				"label": "Instagram link",
-				"slug": "instagram"
+				"label": "Instagram link"
 			}
 		]
 	}
