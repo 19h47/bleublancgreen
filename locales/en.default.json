@@ -49,5 +49,12 @@
 	"newsletter_form": {
 		"email_placeholder": "Your email",
 		"submit": "I'm registering!"
+	},
+	"page": {
+		"wishlist": {
+			"empty_list": "Looks like you haven't started a wishlist yet...",
+			"start_shopping": "Start Shopping",
+			"loader_list": "Loading your customized wishlist..."
+		}
 	}
 }

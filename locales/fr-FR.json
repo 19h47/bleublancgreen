@@ -13,5 +13,12 @@
 	"newsletter_form": {
 		"email_placeholder": "Votre adresse email",
 		"submit": "Je m'inscris"
+	},
+	"page": {
+		"wishlist": {
+			"empty_list": "Il semble que vous n'ayez pas encore créé de wishlist...",
+			"start_shopping": "Commencer",
+			"loader_list": "Chargement de votre wishlist personnalisée ..."
+		}
 	}
 }
