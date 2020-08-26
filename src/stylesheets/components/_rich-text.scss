@@ -1,0 +1,18 @@
+/**
+ * Rich text
+ *
+ *
+ *
+ *
+ */
+.Rich-text {
+	@include padding(top 2 * $base-line-height-px bottom 2 * $base-line-height-px);
+
+	&__title {
+		@extend .h1;
+		@extend %text-transform-uppercase;
+		@include margin(top 0 bottom $base-line-height-px);
+	}
+	&__text {
+	}
+}

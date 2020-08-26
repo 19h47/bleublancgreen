@@ -23,6 +23,8 @@
 
 @import '~@19h47/architecture/src/stylesheets/abstracts/placeholders';
 
+@import 'vendors/shopify';
+
 @import 'base/base';
 @import 'base/typographies';
 
@@ -30,6 +32,8 @@
 @import 'layout/site';
 @import 'layout/header';
 @import 'layout/footer';
+@import 'layout/section';
+@import 'layout/sections';
 
 // Components
 @import 'components/logo';
@@ -39,6 +43,7 @@
 @import 'components/socials';
 @import 'components/policy';
 @import 'components/banner';
+@import 'components/rich-text';
 
 @import '~@19h47/architecture/src/stylesheets/utilities/colors';
 @import '~@19h47/architecture/src/stylesheets/utilities/cursors';

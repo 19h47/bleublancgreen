@@ -7,26 +7,43 @@
 h1,
 .h1 {
 	@extend %font-family-title, %font-weight-regular;
+	@include margin(top $base-line-height-px bottom 2 * $base-line-height-px);
+
+	font-size: 27px;
+	line-height: (34/27);
 }
 
 h2,
 .h2 {
-	@extend %font-weight-regular, %font-family-body;
+	@extend %font-family-title, %font-weight-regular, %text-transform-uppercase;
+	@include letter-spacing(200);
+	@include margin(top $base-line-height-px bottom $base-line-height-px);
+
+	font-size: 18px;
+	line-height: (34/18);
 }
 
 h3,
 .h3 {
-	@extend %font-weight-regular, %font-family-title;
+	@extend %font-family-title, %font-weight-regular;
+	@include letter-spacing(200);
+	@include margin(top $base-line-height-px bottom 0);
+
+	font-size: 18px;
+	line-height: (34/18);
 }
 
 h4,
 .h4 {
-	@extend %font-weight-regular, %font-family-title;
+	@extend %font-family-body, %font-weight-medium;
+	@include margin(top $base-line-height-px bottom 0);
+
+	font-size: 18px;
+	line-height: (34/18);
 }
 
 h5,
 .h5 {
-	@extend %font-weight-regular, %font-family-title;
 }
 
 h6,

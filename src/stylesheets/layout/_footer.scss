@@ -14,15 +14,12 @@
 	color: the_color(white);
 
 	&__title {
-		@extend %text-transform-uppercase, %font-family-body;
-		@include letter-spacing(200);
-		@include margin(bottom $base-line-height-px);
-
-		font-size: 18px;
-		line-height: (34/18);
+		@extend .h2;
+		@include margin(top 0 bottom $base-line-height-px);
 	}
 
 	&__items {
+		@extend .h2;
 		@extend %list-style-type-none;
 	}
 
@@ -43,6 +40,10 @@
 			}
 			&:last-child {
 				@include margin(right 0);
+			}
+
+			a {
+				@extend .h2;
 			}
 		}
 	}
