@@ -10,7 +10,7 @@
       </thead>
       <tbody>
         {% for item in cart.items %}
-          <tr>
+					<tr>
             <td>
               <a href="{{ item.url | within: collections.all }}">
                 <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">

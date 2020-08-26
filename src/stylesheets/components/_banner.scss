@@ -1,0 +1,42 @@
+/**
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+.Banner {
+	@extend %position-relative;
+	@include size(100%, 15 * $base-line-height-px);
+
+	&__flag {
+		@include margin(top $base-line-height-px / 4 bottom $base-line-height-px / 4);
+		@include size(100%, $base-line-height-px / 2);
+
+		background: linear-gradient(
+			90deg,
+			the_color(blue, very-dark) percentage(1/3),
+			the_color(white) percentage(1/3),
+			the_color(white) percentage(2/3),
+			the_color(green, lime) percentage(2/3)
+		);
+		border: none;
+	}
+
+	&__inner {
+		@include margin(top 3 * $base-line-height-px bottom 3 * $base-line-height-px);
+		@include absolute(top 0 right 0 bottom 0 left 0);
+
+		z-index: 2;
+	}
+
+	&__image {
+		@extend %position-relative;
+		@include size(100%);
+
+		object-fit: cover;
+		object-position: center;
+		z-index: 1;
+	}
+}

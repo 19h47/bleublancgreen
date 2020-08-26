@@ -10,9 +10,12 @@
 
 		<link href="https://fonts.googleapis.com/css2?family=Lexend+Exa&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
 
-		{{
-			content_for_header
-		}}
+
+		{%- if settings.favicon != blank -%}
+			<link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+		{%- endif -%}
+
+		{{ content_for_header }}
 		<!-- Header hook for plugins -->
 		{{ "application.scss.css" | asset_url | stylesheet_tag }}
 	</head>
@@ -49,7 +52,7 @@
 					<div class="col-12">
 						<div class="Logo">
 							<a class="d-inline-block" href="{{ shop.secure_url }}">
-								<img src="{{ 'logo.svg' | asset_url }}" width="277" height="100" alt="{{ shop.description }}">
+								<img src="{{ 'logo-black.svg' | asset_url }}" width="277" height="100" alt="{{ shop.description }}">
 							</a>
 						</div>
 					</div>
@@ -83,25 +86,27 @@
 			{% endif %}
 		{% endif %}
 
+		{{ content_for_index }}
+
 		<main role="main">
 			{{ content_for_layout }}
 
 			<div class="Policy">
 				<div class="Site-container">
 					<div class="row">
-						<div class="col-4 text-align-center">
+						<div class="col-12 col-md-4 text-align-center margin-bottom-3 margin-bottom-md-0">
 							<svg><use xlink:href="#golf-flag" href="#golf-flag"></use></svg>
 							<h3>Une fabrication 100 % française</h3>
 							<div class="Policy__content">
 								<p>Nos partenaires sont français.<br />La conception de nos vêtement soutient le tissu industriel local.</p>
 							</div>
 						</div>
-						<div class="col-4 text-align-center">
+						<div class="col-12 col-md-4 text-align-center margin-y-3 margin-y-md-0">
 							<svg><use xlink:href="#award" href="#award"></use></svg>
 							<h3>La qualité</h3>
 							<div class="Policy__content"><p>Des vêtements durables, des tissus de qualité et des coupes précises.</p></div>
 						</div>
-						<div class="col-4 text-align-center">
+						<div class="col-12 col-md-4 text-align-center margin-top-3 margin-top-md-0">
 							<svg><use xlink:href="#golf-uniform" href="#golf-uniform"></use></svg>
 							<h3>Le style BBG</h3>
 
@@ -118,16 +123,16 @@
 		<footer class="Footer">
 			<div class="Site-container">
 				<div class="row">
-					<div class="col-4">
+					<div class="col-12 col-md-4 margin-bottom-3 margin-bottom-md-0">
 						<h3 class="Footer__title">{{ shop.name }}</h3>
 						<ul class="Footer__items">
 							<li class="Footer__item"><a href="">L’esprit BBG</a></li>
 							<li class="Footer__item"><a href="">Contactez-nous</a></li>
-							<li class="Footer__item"><a href="">Mentions légales</a></li>
+							<li class="Footer__item"><a href="/pages/mentions-legales">Mentions légales</a></li>
 							<li class="Footer__item"><a href="">Espace presse ?</a></li>
 						</ul>
 					</div>
-					<div class="col-4">
+					<div class="col-12 col-md-4 margin-top-3 margin-top-md-0">
 						<h3 class="Footer__title">Newsletter</h3>
 						<form class="Form validate" action="" method="post" id="mc-embedded-subscribe-form-footer" name="mc-embedded-subscribe-form" novalidate="true">
 
@@ -148,13 +153,13 @@
 					</div>
 				</div>
 				<div class="row margin-top-6">
-					<div class="col-6">
+					<div class="col-12 col-md-6 margin-bottom-3 margin-bottom-md-0">
 						<ul class="Footer__copyright">
-							<li><a href="/">CGV</a></li>
-							<li><a href="/">Livraison et retours</a></li>
+							<li><a href="/pages/cgv">CGV</a></li>
+							<li><a href="/pages/livraison-et-retours">Livraison et retours</a></li>
 						</ul>
 					</div>
-					<div class="col-6 d-flex justify-content-end">
+					<div class="col-12 col-md-6 d-flex margin-top-3 margin-top-md-0 justify-content-md-end color-white">
 						{% include 'socials' %}
 					</div>
 				</div>

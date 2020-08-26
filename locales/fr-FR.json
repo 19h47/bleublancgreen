@@ -9,5 +9,9 @@
 			"cancel": "Retour à la boutique",
 			"password": "Mot de passe"
 		}
+	},
+	"newsletter_form": {
+		"email_placeholder": "Votre adresse email",
+		"submit": "Je m'inscris"
 	}
 }

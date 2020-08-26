@@ -19,6 +19,8 @@
 
 	svg {
 		@include size(100%, $base-line-height-px * 2);
+
+		fill: currentColor;
 	}
 
 	&__content {
