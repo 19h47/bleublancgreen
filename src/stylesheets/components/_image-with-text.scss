@@ -1,0 +1,16 @@
+/**
+ * Image with text
+ *
+ *
+ *
+ *
+ *
+ */
+.Image-with-text {
+	&__image {
+		@include size(100%);
+
+		object-position: center;
+		object-fit: cover;
+	}
+}

@@ -1,0 +1,61 @@
+{%- comment -%}
+  This is a required section for the Shopify Theme Store.
+  It is available when you add the "Image with text" section in the theme editor.
+
+  Theme Store required settings
+  - Image
+  - Heading: title of the block
+  - Text: description of the block
+
+  Theme Store optional settings
+  - Button label: label associated with the button
+  - Button link: link of the button
+{%- endcomment -%}
+
+<section class="Section Image-with-text">
+	<div class="Site-container">
+		<div class="row">
+			<div class="col-6">
+				<img class="Image-with-text__image" src="{{ section.settings.image | img_url: '562x782' }}" alt="{{ section.settings.image.alt | escape }}">
+			</div>
+			<div class="col-5 offset-1">
+				{% if section.settings.title != blank %}
+					<h2 class="h1 margin-top-0">{{ section.settings.title | escape }}</h2>
+				{% endif %}
+				{% if section.settings.text != blank %}
+					<div class="Wysiwyg">{{ section.settings.text }}</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</section>
+
+{% schema %}
+	{
+    	"name": "Image with text",
+    	"settings": [
+      	{
+        	"type": "image_picker",
+        	"id": "image",
+        	"label": "Image"
+      	},
+      	{
+        	"type": "text",
+        	"id": "title",
+        	"label": "Heading",
+        	"default": "Image with text"
+      	},
+      	{
+        	"type": "richtext",
+        	"id": "text",
+        	"label": "Text",
+        	"default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+      	}
+	],
+    "presets": [
+	{
+        "name": "Image with text",
+        "category": "Image"
+	}]
+  }
+{% endschema %}
