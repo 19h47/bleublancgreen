@@ -1,0 +1,29 @@
+<section class="Section Image">
+	<div class="Site-container">
+        <div class="row">
+            <div class="col-12">
+                <img class="Image-with-text__image" width="{{ section.settings.image.width }}" height="{{ section.settings.image.height }}" src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.image.alt | escape }}">
+			</div>
+		</div>
+	</div>
+</section>
+{% schema %}
+
+{
+    "name": "Image",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Image",
+            "category": "Image"
+        }
+    ]
+}
+
+{% endschema %}

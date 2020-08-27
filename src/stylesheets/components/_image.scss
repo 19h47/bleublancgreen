@@ -1,0 +1,17 @@
+/**
+ * Image
+ *
+ *
+ *
+ *
+ *
+ */
+.Image {
+	img {
+		@extend .d-block;
+		@include margin(right auto left auto);
+		@include size(auto);
+
+		max-width: 100%;
+	}
+}
