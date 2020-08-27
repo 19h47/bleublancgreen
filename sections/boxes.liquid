@@ -1,0 +1,79 @@
+<section class="Section Boxes">
+    <div class="Site-container">
+        <div class="row">
+            {% for block in section.blocks %}
+                <div class="col-12 col-md-4" {{ block.shopify_attributes }}>
+					<article class="Boxes__item" style="color: {{ block.settings.color }}; background-color: {{ block.settings.background_color }};">
+						<svg>
+							<use href="#{{ block.settings.icon }}" xlink:href="#{{ block.settings.icon }}"></use>
+						</svg>
+                        <h3>{{ block.settings.title }}</h3>
+                        <div class="Wysiwyg">
+                            {{ block.settings.text }}
+                        </div>
+                    </article>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% schema %}
+
+{
+    "name": "Boxes",
+    "blocks": [
+        {
+            "type": "box",
+            "name": "Box",
+            "limit": 3,
+            "settings": [
+                {
+                    "type": "color",
+                    "id": "background_color",
+                    "label": "Background color",
+                    "default": "#ffffff"
+                }, {
+                    "type": "color",
+                    "id": "color",
+                    "label": "Color",
+                    "default": "#000000"
+                }, {
+                    "type": "select",
+                    "id": "icon",
+                    "label": "Icon",
+                    "options": [
+                        {
+                            "value": "golf-flag",
+                            "label": "Golf flag"
+                        }, {
+                            "value": "award",
+                            "label": "Award"
+                        }, {
+                            "value": "golf-uniform",
+                            "label": "Golf uniform"
+                        }
+                    ],
+                    "default": "golf-flag"
+                }, {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title",
+                    "default": "Hello World!"
+                }, {
+                    "type": "richtext",
+                    "id": "text",
+                    "label": "Text",
+                    "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Boxes",
+            "category": "Text"
+        }
+    ]
+}
+
+{% endschema %}

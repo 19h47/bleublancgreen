@@ -1,0 +1,28 @@
+/**
+ * Boxes
+ *
+ *
+ *
+ *
+ */
+.Boxes {
+	&__item {
+		@include size(100%);
+		@include padding(
+			top $base-line-height-px right $base-line-height-px bottom $base-line-height-px left
+				$base-line-height-px
+		);
+
+		h3 {
+			@extend %font-family-body, %font-weight-medium;
+			@include letter-spacing(0);
+			@include margin(bottom $base-line-height-px);
+		}
+
+		svg {
+			@include size($base-line-height-px * 2);
+
+			fill: currentColor;
+		}
+	}
+}
