@@ -4,45 +4,47 @@
 {%- endcomment -%}
 
 <section class="Banner Section">
-	<div class="Banner__inner">
-		<div class="Site-container h-100">
-			<div class="row">
-				<div class="col-2 offset-5">
-					<hr class="Banner__flag" />
-				</div>
-				<div class="col-12 text-align-center">
-					<img class="margin-y-1" src="{{ 'logo-white.svg' | asset_url }}" width="277" height="45" alt="{{ shop.description }}" />
-				</div>
-				<div class="col-12 text-align-center">
-					<img class="margin-top-8" src="{{ 'label.svg' | asset_url }}" width="68" height="68" alt="{{ shop.description }}" />
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="Site-container h-100">
-		<div class="row h-100">
-			<div class="col-12 h-100">
-				<img class="Banner__image" src="{{ section.settings.image | img_url: '1168x510' }}" alt="{{ section.settings.image.alt | escape }}">
-			</div>
-		</div>
-	</div>
+    <div class="Banner__inner">
+        <div class="Site-container h-100">
+            <div class="row">
+                <div class="col-2 offset-5">
+                    <hr class="Banner__flag"/>
+                </div>
+                <div class="col-12 text-align-center">
+                    <img class="margin-y-1" src="{{ 'logo-white.svg' | asset_url }}" width="277" height="45" alt="{{ shop.description }}"/>
+                </div>
+                <div class="col-12 text-align-center">
+                    <img class="margin-top-8" src="{{ 'label.svg' | asset_url }}" width="68" height="68" alt="{{ shop.description }}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Site-container h-100">
+        <div class="row h-100">
+            <div class="col-12 h-100">
+                <img class="Banner__image" src="{{ section.settings.image | img_url: '1168x510' }}" alt="{{ section.settings.image.alt | escape }}">
+            </div>
+        </div>
+    </div>
 </section>
 
 {% schema %}
-	{
-		"name": "Banner",
-		"settings": [
-			{
-				"type": "image_picker",
-				"id": "image",
-				"label": "Image"
-			}
-		],
-		"presets": [
-			{
-				"name": "Banner",
-				"category": "Image"
-			}
-		]
-	}
+
+{
+    "name": "Banner",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Banner",
+            "category": "Image"
+        }
+    ]
+}
+
 {% endschema %}

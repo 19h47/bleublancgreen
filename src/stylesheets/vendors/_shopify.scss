@@ -5,8 +5,3 @@
  *
  *
  */
-.shopify {
-	&-section {
-		@include margin(top 2 * $base-line-height-px bottom 2 * $base-line-height-px);
-	}
-}

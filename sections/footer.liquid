@@ -1,0 +1,72 @@
+<footer class="Footer">
+    <div class="Site-container">
+        <div class="row">
+            <div class="col-12 col-md-4 margin-bottom-3 margin-bottom-md-0">
+                {% if linklists[section.settings.footer_linklist].links.size > 0 %}
+                    <h3 class="Footer__title">{{ shop.name }}</h3>
+
+                    <ul class="Footer__items">
+                        {% for link in linklists[section.settings.footer_linklist].links %}
+                            <li class="Footer__item">
+                                <a href="{{ link.url }}">{{ link.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="col-12 col-md-4 margin-top-3 margin-top-md-0">
+                <h3 class="Footer__title">Newsletter</h3>
+                <form action="" class="Form validate" id="mc-embedded-subscribe-form-footer" method="post" name="mc-embedded-subscribe-form" novalidate="true">
+                    <div class="Form__group">
+                        <input class="d-none" id="mce-FNAME-footer" name="FNAME" type="text" value="test"/>
+                        <input class="d-none" id="mce-LNAME-footer" name="LNAME" type="text" value="test"/>
+                        <input class="d-none" id="mce-MMERGE6-footer" name="MMERGE6" type="text" value="test"/>
+                        <input class="d-none" id="mce-MMERGE4-footer" name="MMERGE4" type="text" value="test"/>
+
+                        <input class="Input d-block w-100 margin-bottom-2" type="email" name="EMAIL" id="mce-EMAIL-footer" value="" placeholder="{{ 'newsletter_form.email_placeholder' | t }}" title="The domain portion of the email address is invalid (the portion after the @)." pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" required=""/>
+                        <input class="Input d-block w-100 button" type="submit" value="{{ 'newsletter_form.submit' | t }}" name="subscribe" id="mc-embedded-subscribe"/>
+                        <div class="mc-status"></div>
+                    </div>
+                    <div aria-hidden="true" class="Form__group" style="position: absolute; left: -5000px;">
+                        <input name="b__" tabindex="-1" type="text" value=""/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row margin-top-6">
+            <div class="col-12 col-md-6 margin-bottom-3 margin-bottom-md-0">
+                {% if linklists[section.settings.copyright_linklist].links.size > 0 %}
+                    <ul class="Footer__copyright">
+                        {% for link in linklists[section.settings.copyright_linklist].links %}
+                            <li>
+                                <a href="{{ link.url }}">{{ link.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="col-12 col-md-6 d-flex margin-top-3 margin-top-md-0 justify-content-md-end color-white">
+                {% include 'socials' %}
+            </div>
+        </div>
+    </div>
+</footer>
+
+{% schema %}
+
+{
+    "name": "Footer",
+    "settings": [
+        {
+            "type": "link_list",
+            "id": "footer_linklist",
+            "label": "Footer Menu"
+        }, {
+            "type": "link_list",
+            "id": "copyright_linklist",
+            "label": "Copyright Menu"
+        }
+    ]
+}
+
+{% endschema %}

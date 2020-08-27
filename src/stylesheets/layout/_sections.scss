@@ -8,6 +8,10 @@
 .Sections {
 	@include padding(top $base-line-height-px bottom 2 * $base-line-height-px);
 
+	.shopify-section {
+		@include margin(top 2 * $base-line-height-px bottom 2 * $base-line-height-px);
+	}
+
 	& > *:first-child {
 		@include margin(top 0);
 	}

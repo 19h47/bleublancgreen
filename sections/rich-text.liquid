@@ -7,54 +7,55 @@
   - Text: description of the rich text section
 {%- endcomment -%}
 <section class="Section Rich-text" style="color:  {{ section.settings.color }};background-color: {{ section.settings.background_color }};">
-	<div class="Site-container">
-		<div class="row">
-			<div class="col-7">
-				{%- if section.settings.title != blank -%}
-					<h2 class="Rich-text__title">{{ section.settings.title | escape }}</h2>
-				{%- endif -%}
+    <div class="Site-container">
+        <div class="row">
+            <div class="col-7">
+                {%- if section.settings.title != blank -%}
+                    <h2 class="Rich-text__title">{{ section.settings.title | escape }}</h2>
+                {%- endif -%}
 
-				{%- if section.settings.text != blank -%}
-					<div class="Rich-text__text">
-						{{ section.settings.text }}
-					</div>
-				{%- endif -%}
-			</div>
-		</div>
-	</div>
+                {%- if section.settings.text != blank -%}
+                    <div class="Rich-text__text">
+                        {{ section.settings.text }}
+                    </div>
+                {%- endif -%}
+            </div>
+        </div>
+    </div>
 </section>
 {% schema %}
-	{
-		"name": "Rich text",
-		"settings": [
-	  	{
-			"type": "text",
-			"id": "title",
-			"label": "Heading",
-			"default": "Talk about your brand"
-	  	},
-	  	{
-			"type": "richtext",
-			"id": "text",
-			"label": "Text",
-			"default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
-	  	},
-	  	{
-   			"type": "color",
-   			"id": "background_color",
-   			"label": "Background color",
-   			"default": "#ffffff"
-		},
-		{
-   			"type": "color",
-   			"id": "color",
-   			"label": "Color",
-   			"default": "#000000"
-		}
-	],
-	"presets": [{
-		"name": "Rich text",
-		"category": "Text"
-	}]
+
+{
+    "name": "Rich text",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Talk about your brand"
+        }, {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+        }, {
+            "type": "color",
+            "id": "background_color",
+            "label": "Background color",
+            "default": "#ffffff"
+        }, {
+            "type": "color",
+            "id": "color",
+            "label": "Color",
+            "default": "#000000"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Rich text",
+            "category": "Text"
+        }
+    ]
 }
+
 {% endschema %}

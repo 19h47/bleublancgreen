@@ -1,4 +1,8 @@
 {
 	"emmet.includeLanguages": { "liquid": "html" },
-	"editor.formatOnSave": true
+	"editor.formatOnSave": true,
+	"liquid.format": true,
+	"files.associations": {
+		"*.liquid": "html"
+	}
 }

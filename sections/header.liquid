@@ -1,0 +1,71 @@
+<header class="Header">
+    <div class="Site-container">
+        <div class="row">
+            <div class="col-6">
+                <div class="Shop-name">
+                    <a href="{{ shop.secure_url }}">{{ shop.name }}</a>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="Menu">
+
+                    <ul>
+
+                        <li>
+                            <a href="/pages/wishlist">
+                                <svg>
+                                    <use href="#green" xlink:href="#green"></use>
+                                </svg>
+                                Wishlist
+                            </a>
+                        </li>
+
+                        {% if shop.customer_accounts_enabled %}
+                            {% if customer  %}
+                                <li>
+                                    <a href="/account">
+                                        Your Account
+                                        <svg>
+                                            <use href="#cap" xlink:href="#cap"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                            {% else %}
+                                <li>
+									{{ 'Log in' | customer_login_link }}
+                                    <svg>
+                                        <use href="#cap" xlink:href="#cap"></use>
+                                    </svg>
+                                    {% if shop.customer_accounts_optional %}
+                                        <span>or</span>
+                                        {{ 'Create an account' | customer_register_link }}
+                                    {% endif %}
+                                </li>
+                            {% endif %}
+                        {% endif %}
+
+                        <li>
+                            <a href="/cart">
+                                <svg>
+                                    <use href="#golf" xlink:href="#golf"></use>
+                                </svg>
+                                Cart
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="Logo">
+                    <a class="d-inline-block" href="{{ shop.secure_url }}">
+                        <img src="{{ 'logo-black.svg' | asset_url }}" width="277" height="100" alt="{{ shop.description }}">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
