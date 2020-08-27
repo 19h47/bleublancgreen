@@ -1,0 +1,76 @@
+/**
+ * Menu header
+ *
+ *
+ *
+ *
+ */
+.Menu-header {
+	@extend .d-flex, .justify-content-end;
+
+	$this: &;
+
+	&__items {
+		@extend %list-style-type-none;
+		@extend .d-flex;
+	}
+	&__item {
+		@include margin(right $base-line-height-px left $base-line-height-px);
+
+		& > *:first-child {
+			@include margin(top 0);
+		}
+		& > *:last-child {
+			@include margin(bottom 0);
+		}
+
+		a {
+			@extend .d-block;
+			@extend %position-relative;
+
+			&:hover,
+			&:active {
+				& #{ $this }__label {
+					@include autoAlpha(1);
+				}
+			}
+		}
+
+		svg {
+			@include size(42px);
+		}
+	}
+
+	&__label {
+		@extend .d-block;
+		@include absolute(top 100% left 50%);
+		@extend %white-space-nowrap;
+		@include padding(right $base-line-height-px / 2 left $base-line-height-px / 2);
+		@include margin(top $base-line-height-px / 2);
+		@include autoAlpha(0);
+
+		color: the_color(white);
+		background-color: the_color(blue, very-dark);
+		transform: translate3d(-50%, 0px, 0px);
+
+		transition: opacity 0.3s map-get($easings, ease-out-expo),
+			visibility 0.3s map-get($easings, ease-out-expo);
+
+		&::after {
+			@extend .d-block;
+			@include absolute(bottom $base-line-height-px / 2 left 50%);
+
+			border-width: 0 24px 24px 24px;
+			border-style: solid;
+			border-color: transparent transparent the_color(blue, very-dark) transparent;
+			content: '';
+
+			transform: translate3d(-50%, 0px, 0px);
+			z-index: -1;
+		}
+	}
+
+	&__item-count {
+		@include absolute(left 100% bottom 100%);
+	}
+}

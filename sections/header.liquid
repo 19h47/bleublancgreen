@@ -7,49 +7,48 @@
                 </div>
             </div>
             <div class="col-6">
-                <div class="Menu">
+                <div class="Menu-header">
 
-                    <ul>
+                    <ul class="Menu-header__items">
 
-                        <li>
+                        <li class="Menu-header__item">
                             <a href="/pages/wishlist">
                                 <svg>
                                     <use href="#green" xlink:href="#green"></use>
                                 </svg>
-                                Wishlist
+                                <span class="Menu-header__label">{{ 'menu.header.wishlist' | t }}</span>
                             </a>
                         </li>
 
                         {% if shop.customer_accounts_enabled %}
                             {% if customer  %}
-                                <li>
+                                <li class="Menu-header__item">
                                     <a href="/account">
-                                        Your Account
                                         <svg>
                                             <use href="#cap" xlink:href="#cap"></use>
-                                        </svg>
+										</svg>
+										<span class="Menu-header__label">{{ 'menu.header.account' | t }}</span>
                                     </a>
                                 </li>
                             {% else %}
-                                <li>
-									{{ 'Log in' | customer_login_link }}
-                                    <svg>
-                                        <use href="#cap" xlink:href="#cap"></use>
-                                    </svg>
-                                    {% if shop.customer_accounts_optional %}
-                                        <span>or</span>
-                                        {{ 'Create an account' | customer_register_link }}
-                                    {% endif %}
+                                <li class="Menu-header__item">
+									<a id="customer_login_link" href="/account/login">
+										<svg>
+											<use href="#cap" xlink:href="#cap"></use>
+										</svg>
+										<span class="Menu-header__label">{{ 'menu.header.login' | t }}</span>
+									</a>
                                 </li>
                             {% endif %}
                         {% endif %}
 
-                        <li>
+                        <li class="Menu-header__item">
                             <a href="/cart">
                                 <svg>
                                     <use href="#golf" xlink:href="#golf"></use>
                                 </svg>
-                                Cart
+								<span class="Menu-header__label">{{ 'menu.header.cart' | t }}</span>
+								<span class="Menu-header__item-count">{{ cart.item_count }}</span>
                             </a>
                         </li>
 

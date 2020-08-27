@@ -56,5 +56,13 @@
 			"start_shopping": "Start Shopping",
 			"loader_list": "Loading your customized wishlist..."
 		}
+	},
+	"menu": {
+		"header": {
+			"wishlist": "Wishlist",
+			"account": "Account",
+			"login": "Login",
+			"cart": "Cart"
+		}
 	}
 }

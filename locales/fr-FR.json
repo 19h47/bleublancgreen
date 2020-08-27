@@ -20,5 +20,13 @@
 			"start_shopping": "Commencer",
 			"loader_list": "Chargement de votre wishlist personnalisée ..."
 		}
+	},
+	"menu": {
+		"header": {
+			"wishlist": "Wishlist",
+			"account": "Mon compte",
+			"login": "Se connecter",
+			"cart": "Panier"
+		}
 	}
 }
