@@ -17,10 +17,10 @@ const selectors = {
 /**
  *  Show/Hide recover password form
  */
-const toggleRecoverPasswordForm = () => {
+function toggleRecoverPasswordForm() {
 	document.querySelector(selectors.recoverPasswordForm).classList.toggle('hide');
 	document.querySelector(selectors.loginForm).classList.toggle('hide');
-};
+}
 
 function onShowHidePasswordForm(evt) {
 	evt.preventDefault();

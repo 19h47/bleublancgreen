@@ -1,12 +1,23 @@
 /**
+ * Form
  *
- *
- *
- *
- *
- *
+ * @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
  */
 .Form {
 	&__group {
+		@include margin(top $base-line-height-px bottom $base-line-height-px);
+
+		&:first-child {
+			@include margin(top 0);
+		}
+
+		&:last-child {
+			@include margin(bottom 0);
+		}
+
+		label {
+			@extend .d-block;
+			@include margin(bottom $base-line-height-px / 2);
+		}
 	}
 }

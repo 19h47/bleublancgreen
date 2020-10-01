@@ -1,4 +1,13 @@
 {
+	"layout": {
+		"customer": {
+			"account": "Compte",
+			"logged_in_as_html": "Connecté en tant que {{ first_name }}",
+			"log_out": "Se déconnecter",
+			"log_in": "Se connecter",
+			"create_account": "Créer un compte"
+		}
+	},
 	"customer": {
 		"register": {
 			"title": "Créer un compte",
@@ -8,6 +17,24 @@
 			"submit": "Créer",
 			"cancel": "Retour à la boutique",
 			"password": "Mot de passe"
+		},
+		"login": {
+			"title": "Connexion",
+			"email": "Courriel",
+			"password": "Mot de passe",
+			"forgot_password": "Mot de passe oublié?",
+			"sign_in": "Se connecter",
+			"cancel": "Retourner à la boutique",
+			"guest_title": "Continuer en tant qu'invité",
+			"guest_continue": "Continuer"
+		},
+		"recover_password": {
+			"title": "Réinitialiser votre mot de passe",
+			"email": "Courriel",
+			"submit": "Soumettre",
+			"cancel": "Annuler",
+			"subtext": "Nous vous ferons parvenir un courriel pour réinitialiser votre mot de passe.",
+			"success": "Nous vous avons fait parvenir un courriel pour réinitialiser votre mot de passe."
 		}
 	},
 	"newsletter_form": {
@@ -27,6 +54,31 @@
 			"account": "Mon compte",
 			"login": "Se connecter",
 			"cart": "Panier"
+		}
+	},
+	"products": { "product": { "quantity": "Quantité", "add_to_cart": "Ajouter au caddy" } },
+	"cart": {
+		"general": {
+			"title": "Panier",
+			"remove": "Retirer",
+			"note": "Instructions spéciales pour la commande",
+			"subtotal": "Sous-total",
+			"shipping_at_checkout": "Frais de port et remises calculés à la caisse",
+			"update": "Mettre à jour",
+			"checkout": "Procéder au paiement",
+			"empty": "Votre panier est vide.",
+			"cookies_required": "Activer les cookies pour utiliser le panier",
+			"continue_browsing_html": "<a href=\"/collections/all\">Retourner au magasinage</a>.",
+			"item_quantity": "Quantité de l'article",
+			"savings": "Vous économisez"
+		},
+		"label": {
+			"product": "Produit",
+			"price": "Prix",
+			"quantity": "Quantité",
+			"total": "Total",
+			"discounted_price": "Discounted price",
+			"original_price": "Original price"
 		}
 	}
 }

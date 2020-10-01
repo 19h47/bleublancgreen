@@ -6,8 +6,6 @@
  *
  */
 .Input {
-	@include reset-placeholder(the_color(white));
-
 	@include padding(
 		top $base-line-height-px / 2 right $base-line-height-px / 2 bottom $base-line-height-px / 2
 			left $base-line-height-px / 2
@@ -15,21 +13,29 @@
 
 	font-size: 18px;
 	line-height: (34/18);
-	color: the_color(white);
+	color: currentColor;
 
 	&[type='text'],
-	&[type='email'] {
+	&[type='email'],
+	&[type='password'] {
 		@include padding(
 			top (($base-line-height-px / 2) - 1) bottom (($base-line-height-px / 2) - 1)
 		);
 		@extend %font-family-title;
 
-		border: 1px solid the_color(white);
+		border: 1px solid currentColor;
+		transition: box-shadow 0.15s map-get($easings, ease-in-out);
+
+		&:focus {
+			outline: 0;
+			box-shadow: 0 0 0 $base-line-height-px / 10 rgba(the_color(blue, very-dark), 0.25);
+		}
 	}
 
 	&[type='submit'] {
 		@extend %text-transform-uppercase;
 
+		color: the_color(white);
 		background-color: the_color(green, lime);
 	}
 }

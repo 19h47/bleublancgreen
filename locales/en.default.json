@@ -64,5 +64,6 @@
 			"login": "Login",
 			"cart": "Cart"
 		}
-	}
+	},
+	"products": { "product": { "quantity": "" } }
 }
