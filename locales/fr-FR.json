@@ -1,4 +1,16 @@
 {
+	"general": {
+		"social": {
+			"share_on_facebook": "Partager",
+			"share_on_twitter": "Tweeter",
+			"share_on_pinterest": "Épingler",
+			"alt_text": {
+				"share_on_facebook": "Partager sur Facebook",
+				"share_on_twitter": "Tweeter sur Twitter",
+				"share_on_pinterest": "Épingler sur Pinterest"
+			}
+		}
+	},
 	"layout": {
 		"customer": {
 			"account": "Compte",
