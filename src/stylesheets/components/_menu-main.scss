@@ -1,0 +1,21 @@
+/**
+ * Menu main
+ *
+ * @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
+ */
+.Menu-main {
+	@extend %font-family-title, %text-transform-uppercase;
+
+	a {
+		@include margin(right 17px left 17px);
+		@extend %white-space-nowrap;
+
+		color: the_color(gray, dark);
+		transition: 0.4s color map-get($easings, ease-out-expo);
+
+		&:hover,
+		&.is-active {
+			color: the_color(black);
+		}
+	}
+}
