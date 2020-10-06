@@ -1,0 +1,18 @@
+/**
+ * Product
+ *
+ * @author Jéémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
+ */
+.Product {
+	&__image {
+		position: sticky;
+		top: 0;
+		right: 0;
+		left: 0;
+
+		img {
+			@include size(100%, auto);
+			@extend .d-block;
+		}
+	}
+}

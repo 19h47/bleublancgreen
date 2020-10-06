@@ -1,0 +1,29 @@
+/**
+ * Social sharing
+ *
+ * @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
+ */
+.Social-sharing {
+	@extend %margin-y-3;
+	@extend .d-flex;
+
+	a {
+		@include margin(right $base-line-height-px / 2 left $base-line-height-px / 2);
+		@include size($base-line-height-px);
+
+		span[aria-hidden] {
+			@extend .d-none;
+		}
+
+		&:first-child {
+			@include margin(left 0);
+		}
+		&:last-child {
+			@include margin(right 0);
+		}
+
+		svg {
+			@include size(100%);
+		}
+	}
+}

@@ -1,15 +1,16 @@
 {%- assign current_variant = product.selected_or_first_available_variant -%}
 {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
 
-<section data-section-id="{{ section.id }}" data-section-type="product">
+<section class="Product margin-top-3" data-section-id="{{ section.id }}" data-section-type="product">
     <div class="Site-container">
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 {% for image in product.images %}
                     {% capture wrapper_class %}
                         {%- unless featured_image == image -%}
                             hide
-                        {%- endunless -%}
+						{%- endunless -%}
+						Product__image
                     {% endcapture %}
                     {% include 'responsive-image' with
 						image: image,
@@ -34,16 +35,31 @@
                 {% endif %}
             </div>
 
-            <div class="col-6">
-                <h1>{{ product.title }}</h1>
-                <p>{{ product.vendor }}</p>
+            <div class="col-12 col-md-5 offset-md-1">
+				<h1>{{ product.title }}</h1>
 
+				<div data-price-wrapper>
+					<span data-product-price>
+						{{ current_variant.price | money }}
+					</span>
+
+					{% if product.compare_at_price_max > product.price %}
+						<span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
+						<s data-compare-price>
+							{% if current_variant.compare_at_price > current_variant.price %}
+								{{ current_variant.compare_at_price | money }}
+							{% endif %}
+						</s>
+					{% endif %}
+				</div>
+
+                <p>{{ product.vendor }}</p>
 
                 {% form 'product', product, data-product-form: '', data-product-handle: product.handle, data-enable-history-state: 'true' %}
 
                     {% unless product.has_only_default_variant %}
                         {% for option in product.options_with_values %}
-                            <div class="js">
+                            <div class="margin-y-3 js">
                                 {% if forloop.index0 > 0 %}
                                     {% for value in option.values %}
                                         <input type="radio" id="Option{{ option.position }}-{{ value }}" name="options[{{ option.name }}]" value="{{ value }}" {% if option.selected_value == value %} checked {% endif %}>
@@ -77,24 +93,9 @@
                         </select>
                     </noscript>
 
-                    <div>
+                    <div class="margin-y-3">
                         <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
                         <input class="Select d-block w-100" id="Quantity" min="1" name="quantity" type="number" value="1">
-                    </div>
-
-                    <div data-price-wrapper>
-                        <span data-product-price>
-                            {{ current_variant.price | money }}
-                        </span>
-
-                        {% if product.compare_at_price_max > product.price %}
-                            <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
-                            <s data-compare-price>
-                                {% if current_variant.compare_at_price > current_variant.price %}
-                                    {{ current_variant.compare_at_price | money }}
-                                {% endif %}
-                            </s>
-                        {% endif %}
                     </div>
 
                     <button class="Button w-100 d-block" type="submit" name="add" data-submit-button {% unless current_variant.available %} disabled="disabled" {% endunless %}>
@@ -108,7 +109,7 @@
                     </button>
                 {% endform %}
 
-                <div class="rte">
+                <div class="rte margin-top-3">
                     {{ product.description }}
                 </div>
 
