@@ -1,0 +1,10 @@
+/**
+ * Tease product
+ *
+ * @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
+ */
+.Tease-product {
+	&__footer {
+		@extend .d-flex, .justify-content-between;
+	}
+}

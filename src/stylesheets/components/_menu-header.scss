@@ -6,7 +6,7 @@
  *
  */
 .Menu-header {
-	@extend .d-flex, .justify-content-end;
+	@extend .d-flex, .justify-content-center, .justify-content-md-end;
 
 	$this: &;
 
