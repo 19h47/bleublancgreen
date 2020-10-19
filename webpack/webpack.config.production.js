@@ -3,6 +3,8 @@
  * @file webpack.production.js
  * @author Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
  */
+
+const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
@@ -54,5 +56,8 @@ module.exports = {
 			filename: 'application.scss.css',
 		}),
 		new CompressionPlugin(),
+		new CopyPlugin({
+			patterns: [{ from: 'assets/icons.svg', to: '../snippets/icons.liquid' }],
+		}),
 	],
 };

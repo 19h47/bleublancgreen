@@ -20,6 +20,8 @@ const keyboardKeys = {
 	ENTER: 13,
 };
 
+console.log('product.js');
+
 const selectors = {
 	submitButton: '[data-submit-button]',
 	submitButtonText: '[data-submit-button-text]',

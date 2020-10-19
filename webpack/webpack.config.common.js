@@ -4,27 +4,28 @@
  * @author Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
  */
 
+const webpack = require('webpack');
+
 // Plugins
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
+const dotenv = require('dotenv');
 
 const resolve = require('./webpack.utils');
+
+dotenv.config({ path: resolve('.env') });
 
 const manifestPlugin = new ManifestPlugin({
 	publicPath: 'assets/',
 });
 
 module.exports = {
-	devServer: {
-		contentBase: resolve('/'),
-		compress: true,
-		port: 3000,
-		inline: true,
-		disableHostCheck: true,
-		writeToDisk: true,
+	output: {
+		filename: 'application.js',
+		chunkFilename: '[name].bundle.js',
+		path: resolve(process.env.PUBLIC_PATH),
 	},
 	resolve: {
 		alias: {
@@ -169,8 +170,8 @@ module.exports = {
 			excludeWarnings: true,
 			alwaysNotify: true,
 		}),
-		new CopyPlugin({
-			patterns: [{ from: 'assets/icons.svg', to: '../snippets/icons.liquid' }],
+		new webpack.DefinePlugin({
+			'process.env': dotenv.parsed,
 		}),
 	],
 };

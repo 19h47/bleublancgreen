@@ -15,4 +15,9 @@
 			@extend .d-block;
 		}
 	}
+
+	&__header {
+		@extend .d-flex;
+		@include margin(bottom $base-line-height-px);
+	}
 }
