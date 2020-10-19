@@ -1,64 +1,39 @@
 /**
  *
- * @file   webpack.common.js
- * @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
+ * @file webpack.config.common.js
+ * @author Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
  */
-
-// Node modules
-const path = require('path');
-
-/**
- * Resolve
- *
- * @param {string} dir Dir.
- * @return {string} Dir.
- */
-function resolve(dir) {
-	return path.join(__dirname, '..', dir);
-}
 
 // Plugins
-const webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
-const dotenv = require('dotenv').config({ path: resolve('.env') });
 
-// Manifest plugin
+const resolve = require('./webpack.utils');
+
 const manifestPlugin = new ManifestPlugin({
 	publicPath: 'assets/',
 });
 
 module.exports = {
-	output: {
-		filename: 'application.js',
-		chunkFilename: '[name].bundle.js',
-		path: resolve(process.env.PUBLIC_PATH),
+	devServer: {
+		contentBase: resolve('/'),
+		compress: true,
+		port: 3000,
+		inline: true,
+		disableHostCheck: true,
+		writeToDisk: true,
 	},
 	resolve: {
 		alias: {
 			'@': resolve('src'),
-
-			// scripts
-			scripts: resolve('src/scripts'),
-			common: resolve('src/scripts/common'),
-			pages: resolve('src/scripts/pages'),
-			services: resolve('src/scripts/services'),
-			utils: resolve('src/scripts/utils'),
-			blocks: resolve('src/scripts/blocks'),
-			polyfills: resolve('src/scripts/polyfills'),
-			abstracts: resolve('src/scripts/abstracts'),
-			vendors: resolve('src/scripts/vendors'),
-			videos: resolve('src/videos'),
-
-			// stylesheets
-			stylesheets: resolve('src/stylesheets'),
-
-			// img
-			jpg: resolve('src/img/jpg'),
-			png: resolve('src/img/png'),
-			svg: resolve('src/img/svg'),
+			utils: resolve('src/utils'),
 			icons: resolve('src/icons'),
+			svg: resolve('src/img/svg'),
+			scripts: resolve('src/scripts'),
+			stylesheets: resolve('src/stylesheets'),
 		},
 	},
 	module: {
@@ -66,7 +41,7 @@ module.exports = {
 			{
 				enforce: 'pre',
 				test: /\.js$/,
-				exclude: [/node_modules/, /vendors/],
+				exclude: /node_modules/,
 				loader: 'eslint-loader',
 			},
 			{
@@ -186,13 +161,16 @@ module.exports = {
 	plugins: [
 		manifestPlugin,
 		new SpriteLoaderPlugin({ plainSprite: true }),
+		new CleanWebpackPlugin({
+			cleanOnceBeforeBuildPatterns: [resolve('dist')],
+		}),
 		new WebpackNotifierPlugin({
 			title: 'Webpack',
 			excludeWarnings: true,
 			alwaysNotify: true,
 		}),
-		new webpack.DefinePlugin({
-			'process.env': dotenv.parsed,
+		new CopyPlugin({
+			patterns: [{ from: 'assets/icons.svg', to: '../snippets/icons.liquid' }],
 		}),
 	],
 };

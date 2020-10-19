@@ -1,15 +1,12 @@
 /**
  *
- * @file   webpack.development.js
+ * @file webpack.config.development.js
  * @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
  */
 
-const { merge } = require('webpack-merge');
-const common = require('./webpack.common.js');
-
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports = merge(common, {
+module.exports = {
 	mode: 'development',
 	devtool: 'source-map',
 	watch: true,
@@ -35,10 +32,10 @@ module.exports = merge(common, {
 					{
 						loader: 'sass-loader',
 						options: {
-							sassOptions: Object.assign({
+							sassOptions: {
 								sourceMap: true,
 								precision: 10,
-							}),
+							},
 						},
 					},
 				],
@@ -50,4 +47,4 @@ module.exports = merge(common, {
 			filename: 'application.scss.css',
 		}),
 	],
-});
+};
