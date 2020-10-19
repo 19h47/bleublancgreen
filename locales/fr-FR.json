@@ -47,6 +47,18 @@
 			"cancel": "Annuler",
 			"subtext": "Nous vous ferons parvenir un courriel pour réinitialiser votre mot de passe.",
 			"success": "Nous vous avons fait parvenir un courriel pour réinitialiser votre mot de passe."
+		},
+		"order": {
+			"product": "Produit"
+		},
+		"orders": {
+			"title": "Historique des commandes",
+			"none": "Vous n'avez pas placé de commande à ce jour."
+		},
+		"account": {
+			"details": "Détails du compte",
+			"view_addresses": "Voir les adresses",
+			"title": "Mon compte"
 		}
 	},
 	"newsletter_form": {
@@ -91,6 +103,21 @@
 			"total": "Total",
 			"discounted_price": "Discounted price",
 			"original_price": "Original price"
+		}
+	},
+	"collections": {
+		"general": {
+			"no_matches": "Aucun produit ne correspond à votre recherche."
+		}
+	},
+	"contact": {
+		"form": {
+			"name": "Nom",
+			"email": "Courriel",
+			"phone": "Téléphone",
+			"message": "Message",
+			"send": "Envoyer",
+			"post_success": "Merci de nous avoir avoir contacté. Nous vous reviendrons le plus rapidement possible."
 		}
 	}
 }

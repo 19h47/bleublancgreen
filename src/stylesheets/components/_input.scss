@@ -16,7 +16,8 @@
 	&[type='text'],
 	&[type='email'],
 	&[type='password'],
-	&[type='number'] {
+	&[type='number'],
+	&[type='tel'] {
 		@include padding(
 			top (($base-line-height-px / 2) - 1) bottom (($base-line-height-px / 2) - 1)
 		);

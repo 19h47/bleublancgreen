@@ -12,4 +12,9 @@
 	& > *:last-child {
 		@include margin(bottom 0);
 	}
+
+	ul {
+		@include margin(top $base-line-height-px bottom $base-line-height-px);
+		@include padding(left $base-line-height-px);
+	}
 }

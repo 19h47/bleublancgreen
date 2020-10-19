@@ -1,28 +1,24 @@
 {%- comment -%}
-  This is a required section for the Shopify Theme Store.
-  It is available when you add the "Image with text" section in the theme editor.
 
-  Theme Store required settings
-  - Image
-  - Heading: title of the block
-  - Text: description of the block
-
-  Theme Store optional settings
-  - Button label: label associated with the button
-  - Button link: link of the button
 {%- endcomment -%}
 
 <section class="Section Image-with-text">
     <div class="Site-container">
         <div class="row">
-            <div class="col-12 margin-bottom-3 margin-bottom-md-0 col-md-6">
-                <img class="Image-with-text__image" src="{{ section.settings.image | img_url: '562x782' }}" alt="{{ section.settings.image.alt | escape }}">
-            </div>
-            <div class="col-12 margin-top-3 margin-top-md-0 col-md-5 offset-md-1">
-                {% if section.settings.title != blank %}
+
+			{% if section.settings.image %}
+				<div class="col-12 margin-bottom-3 margin-bottom-md-0 col-md-6">
+					<img class="Image-with-text__image" src="{{ section.settings.image | img_url: '562x782' }}" alt="{{ section.settings.image.alt | escape }}">
+				</div>
+			{% endif %}
+
+            <div class="col-12 margin-top-3 margin-top-md-0 col-md-5{% if section.settings.image %} offset-md-1{% else %} offset-md-7{% endif %}">
+
+				{% if section.settings.title != blank %}
                     <h2 class="h1 margin-top-0">{{ section.settings.title | escape }}</h2>
                 {% endif %}
-                {% if section.settings.text != blank %}
+
+				{% if section.settings.text != blank %}
                     <div class="Wysiwyg">{{ section.settings.text }}</div>
                 {% endif %}
             </div>
@@ -33,7 +29,7 @@
 {% schema %}
 
 {
-    "name": "Image with text",
+	"name": "Image with text",
     "settings": [
         {
             "type": "image_picker",
@@ -54,7 +50,7 @@
     "presets": [
         {
             "name": "Image with text",
-            "category": "Image"
+			"category": "Image"
         }
     ]
 }

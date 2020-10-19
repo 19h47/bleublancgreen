@@ -1,0 +1,30 @@
+/**
+ * Cart
+ *
+ *
+ * @package BleuBlancGreen
+ */
+.Cart {
+	table {
+		width: 100%;
+	}
+
+	thead {
+		@extend %font-family-title, %text-transform-uppercase;
+	}
+
+	&__product {
+	}
+
+	&__price {
+		@extend %text-align-right;
+	}
+
+	&__quantity {
+		@extend %text-align-right;
+	}
+
+	&__total {
+		@extend %text-align-right;
+	}
+}

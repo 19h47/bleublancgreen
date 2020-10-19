@@ -1,0 +1,26 @@
+/**
+ * Textarea
+ *
+ *
+ * @package BleuBlancGreen
+ */
+.Textarea {
+	@extend %font-family-title;
+	@include padding(
+		top ($base-line-height-px / 2) - 1 right $base-line-height-px / 2 bottom
+			($base-line-height-px / 2) - 1 left $base-line-height-px / 2
+	);
+
+	font-size: 18px;
+	line-height: (34/18);
+	color: currentColor;
+	min-height: $base-line-height-px - 2 + 34;
+
+	border: 1px solid currentColor;
+	transition: box-shadow 0.15s map-get($easings, ease-in-out);
+
+	&:focus {
+		outline: 0;
+		box-shadow: 0 0 0 $base-line-height-px / 10 rgba(the_color(blue, very-dark), 0.25);
+	}
+}
