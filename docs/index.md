@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Shopify
 
 You can use the [editor on GitHub](https://github.com/19h47/bleublancgreen/edit/master/docs/index.md) to maintain and preview the content for your website in Markdown files.
 
