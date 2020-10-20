@@ -1,37 +1,29 @@
-## Shopify
+# Mode d'emploi Shopify
 
-You can use the [editor on GitHub](https://github.com/19h47/bleublancgreen/edit/master/docs/index.md) to maintain and preview the content for your website in Markdown files.
+## Adresse de connexion
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+L'adresse de connexion au backoffice de **Shopify** est ici: [https://bleu-blanc-green.myshopify.com/admin](https://bleu-blanc-green.myshopify.com/admin)
 
-### Markdown
+## Présentation du backoffice
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+![navigation](img/navigation-accueil.png)
 
-```markdown
-Syntax highlighted code block
+### Commandes
 
-# Header 1
-## Header 2
-### Header 3
+Retrouvez dans l'onglet **Commandes** toutes les commandes effectuées sur le shop.
 
-- Bulleted
-- List
+### Produits
 
-1. Numbered
-2. List
+En cliquant sur le bouton **Ajouter un produit** vous pouvez ajouter un produit.
 
-**Bold** and _Italic_ and `Code` text
+Vous pouvez ajouter sur le produit un **titre**, une **description**, ou encore ajouter les images du produit.
 
-[Link](url) and ![Image](src)
-```
+### Clients
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Les comptes des clients incrits sur le site ce retrouve ici.
 
-### Jekyll Themes
+### Analyses des données
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/19h47/bleublancgreen/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### Marketing
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Réductions
