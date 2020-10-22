@@ -10,12 +10,12 @@
 		@include margin(right 17px left 17px);
 		@extend %white-space-nowrap;
 
-		color: the_color(gray, dark);
+		color: the_color(blue, very-dark);
 		transition: 0.4s color map-get($easings, ease-out-expo);
 
 		&:hover,
 		&.is-active {
-			color: the_color(black);
+			color: the_color(green, lime);
 		}
 	}
 }

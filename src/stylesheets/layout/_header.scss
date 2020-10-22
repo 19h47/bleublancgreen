@@ -9,15 +9,13 @@
 .Header {
 	@extend %padding-top-5, %position-relative;
 
-	color: the_color(black);
+	color: the_color(blue, very-dark);
 
 	&::before {
 		@extend .d-block;
 
 		@include absolute(top 0 right 0 left 0);
-		@include size(100%, $base-line-height-px / 4);
-
-		color: the_color(blue, very-dark);
+		@include size(100%, $base-line-height-px / 2);
 
 		background: linear-gradient(
 			90deg,
@@ -26,6 +24,7 @@
 			the_color(white) percentage(2/3),
 			the_color(green, lime) percentage(2/3)
 		);
+		color: the_color(blue, very-dark);
 		content: '';
 	}
 }

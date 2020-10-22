@@ -11,6 +11,7 @@ body {
 
 	font-size: #{$base-font-size}px;
 	line-height: $base-line-height / $base-font-size;
+	color: the_color(blue, very-dark);
 
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;

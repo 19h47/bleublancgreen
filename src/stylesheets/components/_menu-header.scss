@@ -38,6 +38,8 @@
 
 		svg {
 			@include size(42px);
+
+			fill: currentColor;
 		}
 	}
 

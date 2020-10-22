@@ -74,9 +74,9 @@
 	},
 	"menu": {
 		"header": {
-			"wishlist": "Wishlist",
-			"account": "Mon compte",
-			"login": "Se connecter",
+			"wishlist": "Favoris",
+			"account": "Compte",
+			"login": "Connexion",
 			"cart": "Panier"
 		}
 	},
