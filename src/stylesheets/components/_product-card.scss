@@ -1,0 +1,23 @@
+/**
+ * Product card
+ *
+ * @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
+ */
+.Product-card {
+	@include margin(bottom $base-line-height-px);
+
+	&__image {
+		@include size(100%, $base-line-height-px * 14);
+
+		img {
+			@include size(100%);
+			@extend .d-block;
+
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+	&__footer {
+		@extend .d-flex, .justify-content-between;
+	}
+}

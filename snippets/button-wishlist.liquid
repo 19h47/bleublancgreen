@@ -1,0 +1,5 @@
+{%- if product.handle != blank -%}
+	<button class="Button w-100 d-block margin-y-3" type="button" data-wishlist-button data-product-handle="{{ product.handle }}">
+		{{ 'products.product.add_to_wishlist' | t }}
+	</button>
+{%- endif -%}

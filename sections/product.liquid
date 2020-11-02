@@ -100,9 +100,11 @@
                     <div class="margin-y-3">
                         <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
                         <input class="Input d-block w-100" id="Quantity" min="1" name="quantity" type="number" value="1">
-                    </div>
+					</div>
 
-                    <button class="Button w-100 d-block" type="submit" data-submit-button {% unless current_variant.available %} disabled="disabled" {% endunless %}>
+					{%- render 'button-wishlist', product: product -%}
+
+                    <button class="Button w-100 d-block margin-y-3" type="submit" data-submit-button {% unless current_variant.available %} disabled="disabled" {% endunless %}>
                         <span data-submit-button-text>
                             {% if current_variant.available %}
                                 {{ 'products.product.add_to_cart' | t }}

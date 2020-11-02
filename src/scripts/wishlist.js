@@ -1,116 +1,99 @@
-/* eslint-disable */
-(function(Wishlist, $) {
-	var $wishlistButton = $('.wishlist-btn');
-	var $wishlistTile = $('.wishlist-tile-container');
-	var $wishlistItemCount = $('.wishlist-item-count');
-	var numProductTiles = $wishlistTile.length;
-	var wishlist = localStorage.getItem('user_wishlist') || [];
-	if (wishlist.length > 0) {
-		wishlist = JSON.parse(localStorage.getItem('user_wishlist'));
+const LOCAL_STORAGE_WISHLIST_KEY = 'shopify-wishlist';
+const LOCAL_STORAGE_DELIMITER = ',';
+const BUTTON_ACTIVE_CLASS = 'active';
+
+const selectors = {
+	button: '[data-wishlist-button]',
+	grid: '[data-wishlist-grid]',
+};
+
+const getWishlist = () => {
+	const wishlist = localStorage.getItem(LOCAL_STORAGE_WISHLIST_KEY) || false;
+
+	if (wishlist) {
+		return wishlist.split(LOCAL_STORAGE_DELIMITER);
 	}
 
-	/*
-	 * Update button to show current state (gold for active)
-	 */
+	return [];
+};
 
-	var animateWishlist = function(self) {
-		$(self).toggleClass('is-active');
-	};
+const wishlistContains = handle => -1 !== getWishlist().indexOf(handle);
 
-	/*
-	 * Add/Remove selected item to the user's wishlist array in localStorage
-	 * Wishlist button class 'is-active' determines whether or not to add or remove
-	 * If 'is-active', remove the item, otherwise add it
-	 */
+const setWishlist = array => {
+	const wishlist = array.join(LOCAL_STORAGE_DELIMITER);
+	if (array.length) localStorage.setItem(LOCAL_STORAGE_WISHLIST_KEY, wishlist);
+	else localStorage.removeItem(LOCAL_STORAGE_WISHLIST_KEY);
+	return wishlist;
+};
 
-	var updateWishlist = function(self) {
-		var productHandle = $(self).attr('data-product-handle');
-		var isRemove = $(self).hasClass('is-active');
-		/* Remove */
-		if (isRemove) {
-			var removeIndex = wishlist.indexOf(productHandle);
-			wishlist.splice(removeIndex, 1);
-			localStorage.setItem('user_wishlist', JSON.stringify(wishlist));
-		} else {
-			/* Add */
-			wishlist.push(productHandle);
-			localStorage.setItem('user_wishlist', JSON.stringify(wishlist));
+const updateWishlist = handle => {
+	const wishlist = getWishlist();
+	const indexInWishlist = wishlist.indexOf(handle);
+
+	if (-1 === indexInWishlist) {
+		wishlist.push(handle);
+	} else {
+		wishlist.splice(indexInWishlist, 1);
+	}
+
+	return setWishlist(wishlist);
+};
+
+// const resetWishlist = () => setWishlist([]);
+
+const setupButtons = buttons => {
+	buttons.forEach($button => {
+		const productHandle = $button.dataset.productHandle || false;
+
+		if (!productHandle) {
+			return console.error(
+				'[Wishlist] Missing `data-product-handle` attribute. Failed to update the wishlist.',
+			);
 		}
-		console.log(JSON.stringify(wishlist));
-	};
 
-	/*
-	 * Loop through wishlist buttons and activate any items that are already in user's wishlist
-	 * Activate by adding class 'is-active'
-	 * Run on initialization
-	 */
-
-	var activateItemsInWishlist = function() {
-		$wishlistButton.each(function() {
-			var productHandle = $(this).attr('data-product-handle');
-			if (wishlist.indexOf(productHandle) > -1) {
-				$(this).addClass('is-active');
-			}
-		});
-	};
-
-	/*
-	 * Loop through product titles and remove any that aren't a part of the wishlist
-	 * Decrement numProductTiles on removal
-	 */
-
-	var displayOnlyWishlistItems = function() {
-		$wishlistTile.each(function() {
-			var productHandle = $(this).attr('data-product-handle');
-			if (wishlist.indexOf(productHandle) === -1) {
-				$(this).remove();
-				numProductTiles--;
-			}
-		});
-	};
-
-	/*
-	 * Check if on the wishlist page and hide any items that aren't a part of the wishlist
-	 * If no wishlist items exist, show the empty wishlist notice
-	 */
-
-	var loadWishlist = function() {
-		if (window.location.href.indexOf('pages/wishlist') > -1) {
-			displayOnlyWishlistItems();
-			$('.wishlist-loader').fadeOut(2000, function() {
-				$('.wishlist-grid').addClass('is_visible');
-				$('.wishlist-hero').addClass('is_visible');
-				if (numProductTiles == 0) {
-					$('.wishlist-grid--empty-list').addClass('is_visible');
-				} else {
-					$('.wishlist-grid--empty-list').hide();
-				}
-			});
+		if (wishlistContains(productHandle)) {
+			$button.classList.add(BUTTON_ACTIVE_CLASS);
 		}
-	};
 
-	/**
-	 * Display number of items in the wishlist
-	 * Must set the $wishlistItemCount variable
-	 */
-	var updateWishlistItemCount = function() {
-		if (wishlist) {
-			$wishlistItemCount.text(wishlist.length);
-		}
-	};
-
-	var bindUIActions = function() {
-		$wishlistButton.click(function(e) {
-			e.preventDefault();
-			updateWishlist(this);
-			animateWishlist(this);
+		$button.addEventListener('click', () => {
+			updateWishlist(productHandle);
+			$button.classList.toggle(BUTTON_ACTIVE_CLASS);
 		});
-	};
 
-	Wishlist.init = function() {
-		bindUIActions();
-		activateItemsInWishlist();
-		loadWishlist();
-		updateWishlistItemCount();
-	};
-})((window.Wishlist = window.Wishlist || {}), jQuery, undefined);
+		return true;
+	});
+};
+
+const setupGrid = grid => {
+	const wishlist = getWishlist();
+
+	const requests = wishlist.map(handle => {
+		const productTileTemplateUrl = `/products/${handle}?view=card`;
+
+		return fetch(productTileTemplateUrl).then(res => res.text());
+	});
+
+	Promise.all(requests).then(responses => {
+		const wishlistProductCards = responses.join('');
+		const buttons = grid.querySelectorAll(selectors.button) || [];
+
+		grid.innerHTML = wishlistProductCards;
+
+		if (buttons.length) {
+			setupButtons(buttons);
+		}
+	});
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+	const buttons = document.querySelectorAll(selectors.button) || [];
+	const grid = document.querySelector(selectors.grid) || false;
+
+	if (buttons.length) {
+		setupButtons(buttons);
+	}
+
+	if (grid) {
+		setupGrid(grid);
+	}
+});

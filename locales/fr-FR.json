@@ -80,7 +80,13 @@
 			"cart": "Panier"
 		}
 	},
-	"products": { "product": { "quantity": "Quantité", "add_to_cart": "Ajouter au caddy" } },
+	"products": {
+		"product": {
+			"quantity": "Quantité",
+			"add_to_cart": "Ajouter au caddy",
+			"add_to_wishlist": "Ajouter à la liste de souhait"
+		}
+	},
 	"cart": {
 		"general": {
 			"title": "Panier",

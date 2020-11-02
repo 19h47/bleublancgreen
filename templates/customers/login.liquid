@@ -78,22 +78,26 @@
 						<span class="hide" data-form-state></span>
 					{% endif %}
 
-					<label for="RecoverEmail" class="label-hidden">
-						{{ 'customer.recover_password.email' | t }}
-					</label>
-					<input type="email"
-							name="email"
-							id="RecoverEmail"
-							placeholder="{{ 'customer.recover_password.email' | t }}"
-							spellcheck="false"
-							autocomplete="off"
-							autocapitalize="off">
+					<div class="Form__group">
+						<label for="RecoverEmail" class="label-hidden">
+							{{ 'customer.recover_password.email' | t }}
+						</label>
+						<input class="Input d-block w-100" type="email"
+								name="email"
+								id="RecoverEmail"
+								placeholder="{{ 'customer.recover_password.email' | t }}"
+								spellcheck="false"
+								autocomplete="off"
+								autocapitalize="off">
+					</div>
 
-					<input type="submit" class="button" value="{{ 'customer.recover_password.submit' | t }}">
+					<div class="Form__group">
+						<input class="Button" type="submit" class="button" value="{{ 'customer.recover_password.submit' | t }}">
 
-					<button type="button" data-recover-toggle>
-						{{ 'customer.recover_password.cancel' | t }}
-					</button>
+						<button class="text-decoration-underline" type="button" data-recover-toggle>
+							{{ 'customer.recover_password.cancel' | t }}
+						</button>
+					</div>
 					{% endform %}
 
 				</div>

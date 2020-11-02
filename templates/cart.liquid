@@ -69,7 +69,7 @@
 												{% endfor %}
 											{% endif %}
 
-											<a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">
+											<a class="text-decoration-underline" href="/cart/change?line={{ forloop.index }}&amp;quantity=0">
 												<small>{{ 'cart.general.remove' | t }}</small>
 											</a>
 										</td>
@@ -106,8 +106,11 @@
 							<p class="text-align-right">{{ 'cart.general.savings' | t }} {{ cart.total_discounts | money }}</p>
 						{% endif %}
 						<p class="text-align-right">{{ 'cart.general.shipping_at_checkout' | t }}</p>
-						<input type="submit" name="update" value="{{ 'cart.general.update' | t }}">
-						<input type="submit" name="checkout" class="Button button" value="{{ 'cart.general.checkout' | t }}">
+
+						<p class="text-align-right">
+							<input class="Button" type="submit" name="update" value="{{ 'cart.general.update' | t }}">
+							<input class="Button" type="submit" name="checkout" value="{{ 'cart.general.checkout' | t }}">
+						</p>
 					</form>
 				</div>
 			</div>

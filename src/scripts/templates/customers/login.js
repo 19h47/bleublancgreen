@@ -6,6 +6,8 @@
  * @namespace password
  */
 
+console.info('password');
+
 const selectors = {
 	recoverPasswordFormTriggers: '[data-recover-toggle]',
 	recoverPasswordForm: '[data-recover-form]',
@@ -18,6 +20,8 @@ const selectors = {
  *  Show/Hide recover password form
  */
 function toggleRecoverPasswordForm() {
+	console.log('toggleRecoverPasswordForm');
+
 	document.querySelector(selectors.recoverPasswordForm).classList.toggle('hide');
 	document.querySelector(selectors.loginForm).classList.toggle('hide');
 }

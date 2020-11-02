@@ -8,7 +8,7 @@
 		top $base-line-height-px / 2 right $base-line-height-px / 2 bottom $base-line-height-px / 2
 			left $base-line-height-px / 2
 	);
-	@extend %text-transform-uppercase;
+	@extend %text-transform-uppercase, %text-align-center;
 
 	font-size: 18px;
 	line-height: (34/18);
