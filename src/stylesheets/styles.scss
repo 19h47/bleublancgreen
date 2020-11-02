@@ -8,6 +8,7 @@
 @import 'base/fonts';
 
 @import '~ress/ress';
+@import '~flickity/css/flickity';
 
 @import '~@19h47/architecture/src/stylesheets/abstracts/functions';
 
@@ -59,6 +60,7 @@
 @import 'components/responsive-table';
 @import 'components/cart';
 @import 'components/textarea';
+@import 'components/carousel';
 
 @import '~@19h47/architecture/src/stylesheets/utilities/colors';
 @import '~@19h47/architecture/src/stylesheets/utilities/cursors';

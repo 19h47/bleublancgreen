@@ -1,0 +1,46 @@
+{% if section.blocks.size > 0 %}
+
+	<div class="Section Carousel js-carousel">
+		<div class="Site-container">
+			<div class="row">
+				<div class="col-12">
+					<div id="carousel-{{ section.id }}" class="Carousel__items js-items">
+						{% for block in section.blocks %}
+							{% if block.settings.image != blank %}
+								<div id="carousel-item-{{ block.id }}" class="Carousel__item" {{ block.shopify_attributes }}>
+									<img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt | escape }}" width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}">
+								</div>
+							{% endif %}
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endif %}
+
+{% schema %}
+
+	{
+		"name": "Carousel",
+		"max_blocks": 8,
+		"blocks": [{
+			"type": "image",
+			"name": "Image slide",
+			"settings": [{
+				"type": "image_picker",
+				"id": "image",
+				"label": "Image"
+			}]
+		}],
+		"presets": [{
+			"name": "Carousel",
+			"category": "Image",
+			"blocks": [{
+			"type": "image"
+			}]
+		}]
+	}
+
+{% endschema %}

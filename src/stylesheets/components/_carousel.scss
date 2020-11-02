@@ -1,0 +1,76 @@
+/**
+ * Carousel
+ *
+ *
+ *
+ */
+.Carousel {
+	&__items {
+		@include size(100%, 15 * $base-line-height-px);
+
+		.flickity-viewport {
+			height: 100% !important;
+		}
+
+		.flickity-button {
+			@extend .d-flex, .align-items-center, .justify-content-center;
+			@include size($base-line-height-px * 2);
+
+			border-radius: $base-line-height-px;
+			background-color: rgba(the_color(blue, very-dark), 0.75);
+
+			&.prev {
+			}
+			&.next {
+			}
+
+			.flickity-button-icon {
+				@include size($base-line-height-px);
+
+				position: static;
+				left: auto;
+				top: auto;
+
+				fill: the_color(white);
+			}
+		}
+
+		.flickity-page-dots {
+			@extend .d-flex, .align-items-center, .justify-content-center;
+			@include margin(top $base-line-height-px);
+
+			position: static;
+
+			.dot {
+				@include size($base-line-height-px / 3);
+				@include margin(right $base-line-height-px / 4 left $base-line-height-px / 4);
+
+				border-radius: $base-line-height-px / 6;
+				background-color: the_color(gray, dark);
+
+				&:first-child {
+					@include margin(left 0);
+				}
+
+				&:last-child {
+					@include margin(right 0);
+				}
+
+				&.is-selected {
+					background-color: the_color(green, lime);
+				}
+			}
+		}
+	}
+
+	&__item {
+		@include size(100%);
+
+		img {
+			@include size(100%);
+
+			object-position: center;
+			object-fit: contain;
+		}
+	}
+}
