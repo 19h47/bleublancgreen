@@ -24,6 +24,15 @@
 
 		svg {
 			@include size(100%);
+
+			fill: currentColor;
+			transition: fill 0.4s map-get($easings, ease-out-expo);
+		}
+
+		&:hover {
+			svg {
+				fill: the_color(green, lime);
+			}
 		}
 	}
 }
