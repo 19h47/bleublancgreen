@@ -33,6 +33,7 @@ module.exports = {
 			utils: resolve('src/utils'),
 			icons: resolve('src/icons'),
 			svg: resolve('src/img/svg'),
+			png: resolve('src/img/png'),
 			scripts: resolve('src/scripts'),
 			stylesheets: resolve('src/stylesheets'),
 		},
@@ -131,8 +132,8 @@ module.exports = {
 					{
 						loader: 'file-loader',
 						options: {
-							outputPath: 'img/',
-							name: '[ext]/[name].[ext]',
+							// outputPath: 'img/',
+							name: '[name].[ext]',
 							// publicPath: '../img/',
 						},
 					},
