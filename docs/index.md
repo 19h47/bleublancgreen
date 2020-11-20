@@ -27,3 +27,13 @@ Les comptes des clients incrits sur le site ce retrouve ici.
 ### Marketing
 
 ### Réductions
+
+### Paramètres
+
+## Menu général
+
+Vous pouvez ici modifier les informations générales de la boutique, et notamment le **nom de la boutique**.
+
+### Informations sur la boutique
+
+![parametres-menu-general](img/parametres-menu-general.png)
