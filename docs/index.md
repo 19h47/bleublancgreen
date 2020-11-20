@@ -37,3 +37,9 @@ Vous pouvez ici modifier les informations générales de la boutique, et notamme
 ### Informations sur la boutique
 
 ![parametres-menu-general](img/parametres-menu-general.png)
+
+### Adresse de la boutique
+
+### Normes et formats
+
+### Devise de la boutique
