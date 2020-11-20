@@ -38,8 +38,12 @@ Vous pouvez ici modifier les informations générales de la boutique, et notamme
 
 ![parametres-menu-general](img/parametres-menu-general.png)
 
-### Adresse de la boutique
+#### Adresse de la boutique
 
-### Normes et formats
+#### Normes et formats
 
-### Devise de la boutique
+#### Devise de la boutique
+
+### Notifications
+
+Vous pouvez ici, modifier et personnaliser l'aspect des notifications envoyés aux clients.
