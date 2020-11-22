@@ -47,3 +47,7 @@ Vous pouvez ici modifier les informations générales de la boutique, et notamme
 ### Notifications
 
 Vous pouvez ici, modifier et personnaliser l'aspect des notifications envoyés aux clients.
+
+### Traductions
+
+Les traductions du site se trouve dans **Boutique en ligne**, puis clicquer sur **Actions** sur le thème actuel, dans le sous menu qui apparaît cliquer sur **Modifier les langues**.
