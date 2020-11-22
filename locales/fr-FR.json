@@ -1,129 +1,129 @@
 {
-	"general": {
-		"social": {
-			"share_on_facebook": "Partager",
-			"share_on_twitter": "Tweeter",
-			"share_on_pinterest": "Épingler",
-			"alt_text": {
-				"share_on_facebook": "Partager sur Facebook",
-				"share_on_twitter": "Tweeter sur Twitter",
-				"share_on_pinterest": "Épingler sur Pinterest"
-			}
-		}
-	},
-	"layout": {
-		"customer": {
-			"account": "Compte",
-			"logged_in_as_html": "Connecté en tant que {{ first_name }}",
-			"log_out": "Se déconnecter",
-			"log_in": "Se connecter",
-			"create_account": "Créer un compte"
-		}
-	},
-	"customer": {
-		"register": {
-			"title": "Créer un compte",
-			"first_name": "Prénom",
-			"last_name": "Nom",
-			"email": "Courriel",
-			"submit": "Créer",
-			"cancel": "Retour à la boutique",
-			"password": "Mot de passe"
-		},
-		"login": {
-			"title": "Connexion",
-			"email": "Courriel",
-			"password": "Mot de passe",
-			"forgot_password": "Mot de passe oublié?",
-			"sign_in": "Se connecter",
-			"cancel": "Retourner à la boutique",
-			"guest_title": "Continuer en tant qu'invité",
-			"guest_continue": "Continuer"
-		},
-		"recover_password": {
-			"title": "Réinitialiser votre mot de passe",
-			"email": "Courriel",
-			"submit": "Soumettre",
-			"cancel": "Annuler",
-			"subtext": "Nous vous ferons parvenir un courriel pour réinitialiser votre mot de passe.",
-			"success": "Nous vous avons fait parvenir un courriel pour réinitialiser votre mot de passe."
-		},
-		"order": {
-			"product": "Produit"
-		},
-		"orders": {
-			"title": "Historique des commandes",
-			"none": "Vous n'avez pas placé de commande à ce jour."
-		},
-		"account": {
-			"details": "Détails du compte",
-			"view_addresses": "Voir les adresses",
-			"title": "Mon compte"
-		}
-	},
-	"newsletter_form": {
-		"email_placeholder": "Votre adresse email",
-		"submit": "Je m'inscris"
-	},
-	"page": {
-		"wishlist": {
-			"empty_list": "Il semble que vous n'ayez pas encore créé de wishlist...",
-			"start_shopping": "Commencer",
-			"loader_list": "Chargement de votre wishlist personnalisée ..."
-		}
-	},
-	"menu": {
-		"header": {
-			"wishlist": "Favoris",
-			"account": "Compte",
-			"login": "Connexion",
-			"cart": "Panier"
-		}
-	},
-	"products": {
-		"product": {
-			"quantity": "Quantité",
-			"add_to_cart": "Ajouter au caddy",
-			"add_to_wishlist": "Ajouter à la liste de souhait"
-		}
-	},
-	"cart": {
-		"general": {
-			"title": "Panier",
-			"remove": "Retirer",
-			"note": "Instructions spéciales pour la commande",
-			"subtotal": "Sous-total",
-			"shipping_at_checkout": "Frais de port et remises calculés à la caisse",
-			"update": "Mettre à jour",
-			"checkout": "Procéder au paiement",
-			"empty": "Votre panier est vide.",
-			"cookies_required": "Activer les cookies pour utiliser le panier",
-			"continue_browsing_html": "<a href=\"/collections/all\">Retourner au magasinage</a>.",
-			"item_quantity": "Quantité de l'article",
-			"savings": "Vous économisez"
-		},
-		"label": {
-			"product": "Produit",
-			"price": "Prix",
-			"quantity": "Quantité",
-			"total": "Total",
-			"discounted_price": "Discounted price",
-			"original_price": "Original price"
-		}
-	},
-	"collections": {
-		"general": {
-			"no_matches": "Aucun produit ne correspond à votre recherche."
-		}
-	},
-	"contact": {
-		"form": {
-			"name": "Nom",
-			"email": "Courriel",
-			"phone": "Téléphone",
-			"message": "Message",
-			"send": "Envoyer",
-			"post_success": "Merci de nous avoir avoir contacté. Nous vous reviendrons le plus rapidement possible."
-		}
-	}
+  "general": {
+    "social": {
+      "share_on_facebook": "Partager",
+      "share_on_twitter": "Tweeter",
+      "share_on_pinterest": "Épingler",
+      "alt_text": {
+        "share_on_facebook": "Partager sur Facebook",
+        "share_on_twitter": "Tweeter sur Twitter",
+        "share_on_pinterest": "Épingler sur Pinterest"
+      }
+    }
+  },
+  "layout": {
+    "customer": {
+      "account": "Compte",
+      "logged_in_as_html": "Connecté en tant que {{ first_name }}",
+      "log_out": "Se déconnecter",
+      "log_in": "Se connecter",
+      "create_account": "Créer un compte"
+    }
+  },
+  "customer": {
+    "register": {
+      "title": "Créer un compte",
+      "first_name": "Prénom",
+      "last_name": "Nom",
+      "email": "Courriel",
+      "submit": "Créer",
+      "cancel": "Retour à la boutique",
+      "password": "Mot de passe"
+    },
+    "login": {
+      "title": "Connexion",
+      "email": "Courriel",
+      "password": "Mot de passe",
+      "forgot_password": "Mot de passe oublié?",
+      "sign_in": "Se connecter",
+      "cancel": "Retourner à la boutique",
+      "guest_title": "Continuer en tant qu'invité",
+      "guest_continue": "Continuer"
+    },
+    "recover_password": {
+      "title": "Réinitialiser votre mot de passe",
+      "email": "Courriel",
+      "submit": "Soumettre",
+      "cancel": "Annuler",
+      "subtext": "Nous vous ferons parvenir un courriel pour réinitialiser votre mot de passe.",
+      "success": "Nous vous avons fait parvenir un courriel pour réinitialiser votre mot de passe."
+    },
+    "order": {
+      "product": "Produit"
+    },
+    "orders": {
+      "title": "Historique des commandes",
+      "none": "Vous n'avez pas placé de commande à ce jour."
+    },
+    "account": {
+      "details": "Détails du compte",
+      "view_addresses": "Voir les adresses",
+      "title": "Mon compte"
+    }
+  },
+  "newsletter_form": {
+    "email_placeholder": "Votre adresse email",
+    "submit": "Je m'inscris"
+  },
+  "page": {
+    "wishlist": {
+      "empty_list": "Il semble que vous n'ayez pas encore créé de wishlist...",
+      "start_shopping": "Commencer",
+      "loader_list": "Chargement de votre wishlist personnalisée ..."
+    }
+  },
+  "menu": {
+    "header": {
+      "wishlist": "Mes Favoris",
+      "account": "Compte",
+      "login": "Mon compte",
+      "cart": "Mon panier"
+    }
+  },
+  "products": {
+    "product": {
+      "quantity": "Quantité",
+      "add_to_cart": "Ajouter au caddy",
+      "add_to_wishlist": "Ajouter à la liste de souhait"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Panier",
+      "remove": "Retirer",
+      "note": "Instructions spéciales pour la commande",
+      "subtotal": "Sous-total",
+      "shipping_at_checkout": "Frais de port et remises calculés à la caisse",
+      "update": "Mettre à jour",
+      "checkout": "Procéder au paiement",
+      "empty": "Votre panier est vide.",
+      "cookies_required": "Activer les cookies pour utiliser le panier",
+      "continue_browsing_html": "<a href=\"\/collections\/all\">Retourner au magasinage<\/a>.",
+      "item_quantity": "Quantité de l'article",
+      "savings": "Vous économisez"
+    },
+    "label": {
+      "product": "Produit",
+      "price": "Prix",
+      "quantity": "Quantité",
+      "total": "Total",
+      "discounted_price": "Discounted price",
+      "original_price": "Original price"
+    }
+  },
+  "collections": {
+    "general": {
+      "no_matches": "Aucun produit ne correspond à votre recherche."
+    }
+  },
+  "contact": {
+    "form": {
+      "name": "Nom",
+      "email": "Courriel",
+      "phone": "Téléphone",
+      "message": "Message",
+      "send": "Envoyer",
+      "post_success": "Merci de nous avoir avoir contacté. Nous vous reviendrons le plus rapidement possible."
+    }
+  }
 }
