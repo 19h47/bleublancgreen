@@ -5,14 +5,17 @@
  */
 .Product {
 	&__image {
-		position: sticky;
-		top: 0;
-		right: 0;
-		left: 0;
-
 		img {
 			@include size(100%, auto);
 			@extend .d-block;
+		}
+	}
+
+	&__thumbnails {
+		@extend %list-style-type-none;
+		@extend .d-flex, .align-items-center;
+
+		li {
 		}
 	}
 

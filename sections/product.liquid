@@ -9,13 +9,12 @@
             <div class="col-12 col-md-6">
 
 				{% for image in product.images %}
-                    {% capture wrapper_class %}
-                        {%- unless featured_image == image -%}
-                            hide
-						{%- endunless -%}
-						Product__image
-                    {% endcapture %}
-                    {% include 'responsive-image' with
+				{% capture wrapper_class %}
+				{%- unless featured_image == image -%}
+				  hide
+				{%- endunless -%}
+			  {% endcapture %}
+					{% include 'responsive-image' with
 						image: image,
 						max_width: 700,
 						max_height: 800,
@@ -23,20 +22,21 @@
 						wrapper_class: wrapper_class,
 						wrapper_attributes: "data-product-image-wrapper",
 					%}
-                {% endfor %}
+				{% endfor %}
 
-                {% if product.images.size > 1 %}
-                    <ul>
-                        {% for image in product.images %}
-                            <li>
-                                <a href="{{ image.src | img_url: '480x480' }}" data-thumbnail-id="{{ image.id }}" data-product-single-thumbnail {% if featured_image == image %} aria-current="true" {% endif %}>
-                                    <img class="product-single__thumbnail-image" src="{{ image.src | img_url: '160x160' }}" alt="{{ image.alt | escape }}">
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-            </div>
+				{% if product.images.size > 1 %}
+					<ul class="Product__thumbnails">
+						{% for image in product.images %}
+							<li>
+								<a href="{{ image.src | img_url: '480x480' }}" data-thumbnail-id="{{ image.id }}" data-product-single-thumbnail {% if featured_image == image %} aria-current="true" {% endif %}>
+									<img class="product-single__thumbnail-image" src="{{ image.src | img_url: '160x160' }}" alt="{{ image.alt | escape }}">
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+			</div>
+
 
             <div class="col-12 col-md-5 offset-md-1">
 
