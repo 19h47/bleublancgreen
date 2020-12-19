@@ -25,6 +25,7 @@ function initializeAddressForm(container) {
 
 	container.querySelectorAll(selectors.addressToggle).forEach(button => {
 		button.addEventListener('click', () => {
+			console.info('addresses.addressToggle.click');
 			addressForm.classList.toggle(hideClass);
 		});
 	});

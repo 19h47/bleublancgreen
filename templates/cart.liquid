@@ -108,8 +108,13 @@
 						<p class="text-align-right">{{ 'cart.general.shipping_at_checkout' | t }}</p>
 
 						<p class="text-align-right">
-							<input class="Button" type="submit" name="update" value="{{ 'cart.general.update' | t }}">
-							<input class="Button" type="submit" name="checkout" value="{{ 'cart.general.checkout' | t }}">
+							<button class="Button w-100 margin-bottom-1 w-md-auto margin-bottom-md-0 margin-right-md-1" type="submit" name="update">
+								{{ 'cart.general.update' | t }}
+							</button><!--
+
+							--><button class="Button w-100 w-md-auto" type="submit" name="checkout">
+								{{ 'cart.general.checkout' | t }}
+							</button>
 						</p>
 					</form>
 				</div>

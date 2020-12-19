@@ -21,6 +21,11 @@
 
 			max-width: 100% !important;
 			max-height: 100% !important;
+
+			&:focus {
+				outline: none;
+				outline-offset: 0;
+			}
 		}
 	}
 

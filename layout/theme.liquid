@@ -40,7 +40,7 @@
 		<div class="Menu-main">
 			<div class="Site-container">
 				<div class="row">
-					<div class="col-12 col-lg-6 d-lg-flex">
+					<div class="col-12 col-lg-6 d-flex flex-column flex-md-row">
 						{% for link in linklists.main-menu.links %}
 							{% assign child_list_handle = link.title | handleize %}
 
@@ -55,7 +55,7 @@
 							{% endif %}
 						{% endfor %}
 					</div>
-					<div class="col-12 col-lg-6 d-lg-flex justify-content-md-end">
+					<div class="col-12 col-lg-6 d-flex flex-column flex-md-row justify-content-md-end">
 
 						{% for link in linklists.menu-main-right.links %}
 							{% assign child_list_handle = link.title | handleize %}

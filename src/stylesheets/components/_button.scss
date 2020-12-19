@@ -15,4 +15,11 @@
 
 	color: the_color(white);
 	background-color: the_color(green, lime);
+
+	transition: box-shadow 0.5s map-get($easings, ease-out-expo);
+
+	&:focus {
+		outline: none;
+		box-shadow: 0 0 0 4px rgba(the_color(green, lime), 0.5);
+	}
 }

@@ -2,7 +2,7 @@
 	"general": {
 		"404": {
 			"title": "404 - Page non trouvée",
-			"subtext_html": "Cette page n'est pas disponible. <a href=\"/collections/all\">Retourner au magasinage</a>"
+			"subtext_html": "Cette page n'est pas disponible. <a class=\"Button d-block w-100 margin-top-3\" href=\"/collections/all\">Retourner au magasinage</a>"
 		},
 		"social": {
 			"share_on_facebook": "Partager",
@@ -60,9 +60,40 @@
 			"none": "Vous n'avez pas placé de commande à ce jour."
 		},
 		"account": {
+			"title": "Mon compte",
 			"details": "Détails du compte",
 			"view_addresses": "Voir les adresses",
-			"title": "Mon compte"
+			"return": "Retour aux détails du compte"
+		},
+		"addresses": {
+			"title": "Votre adresse",
+			"default": "Par défaut",
+			"add_new": "Ajouter une nouvelle adresse",
+			"edit_address": "Éditer l'adresse",
+			"first_name": "Prénom",
+			"last_name": "Nom",
+			"company": "Compagnie",
+			"address1": "Adresse 1",
+			"address2": "Adresse 2",
+			"city": "Ville",
+			"country": "Pays",
+			"province": "Province",
+			"zip": "Code postal",
+			"phone": "Téléphone",
+			"set_default": "Définir comme adresse par défaut",
+			"add": "Ajouter l'adresse",
+			"update": "Mettre à jour l'adresse",
+			"cancel": "Annuler",
+			"edit": "Éditer",
+			"delete": "Supprimer",
+			"delete_confirm": "Êtes-vous certain(e) de vouloir supprimer cette adresse?"
+		},
+		"reset_password": {
+			"title": "Réinitialiser le mot de passe du compte",
+			"subtext": "Entrez un nouveau mot de passe pour {{ email }}",
+			"submit": "Réinitialiser le mot de passe",
+			"password": "Mot de passe",
+			"password_confirm": "Confirmer le mot de passe"
 		}
 	},
 	"newsletter_form": {

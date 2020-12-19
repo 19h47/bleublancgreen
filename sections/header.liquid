@@ -28,6 +28,7 @@
                                             <use href="#cap" xlink:href="#cap"></use>
 										</svg>
 										<span class="Menu-header__label">{{ 'menu.header.account' | t }}</span>
+										<span class="Menu-header__sup Menu-header__sup--login"></span>
                                     </a>
                                 </li>
                             {% else %}
@@ -48,7 +49,7 @@
                                     <use href="#golf" xlink:href="#golf"></use>
                                 </svg>
 								<span class="Menu-header__label">{{ 'menu.header.cart' | t }}</span>
-								<span class="Menu-header__item-count">{{ cart.item_count }}</span>
+								<span class="Menu-header__sup">{{ cart.item_count }}</span>
                             </a>
                         </li>
 
