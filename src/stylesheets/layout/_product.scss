@@ -11,6 +11,18 @@
 		}
 	}
 
+	&__thumbnail {
+		@include margin(top auto right auto bottom auto left auto);
+
+		object-fit: contain;
+		object-position: center;
+
+		&:focus {
+			outline: none;
+			outline-offset: 0;
+		}
+	}
+
 	&__thumbnails {
 		@extend %list-style-type-none;
 		@extend .d-flex, .align-items-center;

@@ -9,14 +9,21 @@
 	&__image {
 		@include size(100%, $base-line-height-px * 14);
 
+		margin: 0 auto !important;
+		max-width: 100% !important;
+
 		img {
 			@include size(100%);
 			@extend .d-block;
 
 			object-fit: cover;
 			object-position: center;
+
+			max-width: 100% !important;
+			max-height: 100% !important;
 		}
 	}
+
 	&__footer {
 		@extend .d-flex, .justify-content-between;
 	}
