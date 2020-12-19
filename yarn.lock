@@ -1001,6 +1001,11 @@
   resolved "https://registry.yarnpkg.com/@shopify/theme-addresses/-/theme-addresses-4.1.0.tgz#93a25695eb85a37f33501b370fbb68155feb51d0"
   integrity sha512-tvzfN/PhFp3p8tkeu/QnsXc+eQ9+oTJkz8zMtJTwT5ZLlKkuQNeY/5JkPiDgoH2OO9DEw7vAVvWF7e4a2ymYOQ==
 
+"@shopify/theme-cart@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@shopify/theme-cart/-/theme-cart-4.1.0.tgz#eca2f2985a46af5c4d40f54be8db2b244edc1fc0"
+  integrity sha512-g4A88V+CrnkHu1JtwB+r/MakJs9DBvHBzafYwijFhK13D959HhG4DYOD475JSted0QReft+ce4F7z5/cA5vIBw==
+
 "@shopify/theme-currency@^4.1.0":
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/@shopify/theme-currency/-/theme-currency-4.1.0.tgz#0bfd93646261b3b1da1b05d47d50f61e16012419"
@@ -4938,6 +4943,11 @@ klona@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/klona/-/klona-2.0.4.tgz#7bb1e3affb0cb8624547ef7e8f6708ea2e39dfc0"
   integrity sha512-ZRbnvdg/NxqzC7L9Uyqzf4psi1OM4Cuc+sJAkQPjO6XkQIJTNbfK2Rsmbw8fx1p2mkZdp2FZYo2+LwXYY/uwIA==
+
+lazysizes@^5.3.0-beta1:
+  version "5.3.0-beta1"
+  resolved "https://registry.yarnpkg.com/lazysizes/-/lazysizes-5.3.0-beta1.tgz#a2fa48145b28f8cf54df5d20aa8a47b63fa35641"
+  integrity sha512-4ZEoV4UXvz5L96XBuaFphGlq8BVi78kIA4kL3ls2qSYMEgGBdXMgsh8u+bTVjbdwbXfzXtWc71OH4EfEEPVZoA==
 
 levn@^0.4.1:
   version "0.4.1"

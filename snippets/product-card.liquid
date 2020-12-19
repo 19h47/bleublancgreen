@@ -39,4 +39,10 @@
 			{{ 'products.product.sold_out' | t }}
 		{% endunless %}
 	</div>
+
+	{% if wishlist %}
+		<button class="Button w-100 d-block" data-wishlist-remove data-product-handle="{{ product.handle }}">
+			{{ 'page.wishlist.remove' | t }}
+		</button>
+	{% endif %}
 </div>

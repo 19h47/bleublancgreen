@@ -104,7 +104,8 @@
 		"wishlist": {
 			"empty_list": "Il semble que vous n'ayez pas encore créé de wishlist...",
 			"start_shopping": "Commencer",
-			"loader_list": "Chargement de votre wishlist personnalisée ..."
+			"loader_list": "Chargement de votre wishlist personnalisée ...",
+			"remove": "Retirer de la liste de souhaite"
 		}
 	},
 	"menu": {

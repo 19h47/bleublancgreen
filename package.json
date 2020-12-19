@@ -14,11 +14,13 @@
 		"@19h47/architecture": "19h47/architecture",
 		"@shopify/theme-a11y": "^4.1.0",
 		"@shopify/theme-addresses": "^4.1.0",
+		"@shopify/theme-cart": "^4.1.0",
 		"@shopify/theme-currency": "^4.1.0",
 		"@shopify/theme-product-form": "^4.1.0",
 		"@shopify/theme-sections": "^4.1.0",
 		"bootstrap": "^4.5.3",
-		"flickity": "^2.2.1"
+		"flickity": "^2.2.1",
+		"lazysizes": "^5.3.0-beta1"
 	},
 	"devDependencies": {
 		"@19h47/prettier-config": "^1.0.0",

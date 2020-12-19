@@ -1,5 +1,6 @@
 import Flickity from 'flickity';
 
+require('./layout/theme');
 require('./wishlist');
 require('./templates');
 

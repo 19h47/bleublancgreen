@@ -5,6 +5,8 @@ const BUTTON_ACTIVE_CLASS = 'active';
 const selectors = {
 	button: '[data-wishlist-button]',
 	grid: '[data-wishlist-grid]',
+	counter: '[data-wishlist-counter]',
+	delete: '[data-wishlist-delete]',
 };
 
 const getWishlist = () => {
@@ -17,12 +19,28 @@ const getWishlist = () => {
 	return [];
 };
 
+const updateCounter = () => {
+	const wishlist = getWishlist();
+	const $counter = document.querySelector(selectors.counter);
+
+	$counter.innerHTML = '';
+
+	if (0 < wishlist.length) {
+		$counter.innerHTML = wishlist.length;
+	}
+};
+
 const wishlistContains = handle => -1 !== getWishlist().indexOf(handle);
 
 const setWishlist = array => {
 	const wishlist = array.join(LOCAL_STORAGE_DELIMITER);
-	if (array.length) localStorage.setItem(LOCAL_STORAGE_WISHLIST_KEY, wishlist);
-	else localStorage.removeItem(LOCAL_STORAGE_WISHLIST_KEY);
+
+	if (array.length) {
+		localStorage.setItem(LOCAL_STORAGE_WISHLIST_KEY, wishlist);
+	} else {
+		localStorage.removeItem(LOCAL_STORAGE_WISHLIST_KEY);
+	}
+
 	return wishlist;
 };
 
@@ -57,7 +75,9 @@ const setupButtons = buttons => {
 
 		$button.addEventListener('click', () => {
 			updateWishlist(productHandle);
+			updateCounter();
 			$button.classList.toggle(BUTTON_ACTIVE_CLASS);
+			$button.innerHTML = 'Article ajoué à votre liste de souhait';
 		});
 
 		return true;
@@ -73,17 +93,26 @@ const setupGrid = grid => {
 		return fetch(productTileTemplateUrl).then(res => res.text());
 	});
 
-	Promise.all(requests).then(responses => {
-		const wishlistProductCards = responses.join('');
-		const buttons = grid.querySelectorAll(selectors.button) || [];
+	Promise.all(requests)
+		.then(responses => {
+			const wishlistProductCards = responses.join('');
+			const buttons = grid.querySelectorAll(selectors.button) || [];
 
-		grid.innerHTML = wishlistProductCards;
+			grid.innerHTML = wishlistProductCards;
 
-		if (buttons.length) {
-			setupButtons(buttons);
-		}
-	});
+			if (buttons.length) {
+				setupButtons(buttons);
+			}
+		})
+		.then(() => {
+			if (0 === grid.innerHTML.length) {
+				grid.innerHTML =
+					'<div class="col-12"><p>Aucun article à afficher dans votre liste de souhait</p></div>';
+			}
+		});
 };
+
+updateCounter();
 
 document.addEventListener('DOMContentLoaded', () => {
 	const buttons = document.querySelectorAll(selectors.button) || [];
@@ -97,3 +126,17 @@ document.addEventListener('DOMContentLoaded', () => {
 		setupGrid(grid);
 	}
 });
+
+document.addEventListener(
+	'click',
+	({ target }) => {
+		if (target.hasAttribute('data-wishlist-remove')) {
+			const handle = target.getAttribute('data-product-handle');
+
+			updateWishlist(handle);
+			updateCounter();
+			target.parentNode.remove();
+		}
+	},
+	false,
+);
