@@ -77,7 +77,7 @@ const setupButtons = buttons => {
 			updateWishlist(productHandle);
 			updateCounter();
 			$button.classList.toggle(BUTTON_ACTIVE_CLASS);
-			$button.innerHTML = 'Article ajoué à votre liste de souhait';
+			$button.innerHTML = 'Article ajoué à vos favoris';
 		});
 
 		return true;
@@ -88,7 +88,7 @@ const setupGrid = grid => {
 	const wishlist = getWishlist();
 
 	const requests = wishlist.map(handle => {
-		const productTileTemplateUrl = `/products/${handle}?view=card`;
+		const productTileTemplateUrl = `/products/${handle}?view=tease`;
 
 		return fetch(productTileTemplateUrl).then(res => res.text());
 	});

@@ -8,7 +8,8 @@
 	"license": "MIT",
 	"scripts": {
 		"prod": "webpack --mode=production --config webpack/webpack.config.js",
-		"dev": "webpack --mode=development --config webpack/webpack.config.js"
+		"dev": "webpack --mode=development --config webpack/webpack.config.js",
+		"watch": "theme watch --allow-live"
 	},
 	"dependencies": {
 		"@19h47/architecture": "19h47/architecture",

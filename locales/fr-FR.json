@@ -105,7 +105,7 @@
 			"empty_list": "Il semble que vous n'ayez pas encore créé de wishlist...",
 			"start_shopping": "Commencer",
 			"loader_list": "Chargement de votre wishlist personnalisée ...",
-			"remove": "Retirer de la liste de souhaite"
+			"remove": "Retirer des favoris"
 		}
 	},
 	"menu": {
@@ -120,7 +120,7 @@
 		"product": {
 			"quantity": "Quantité",
 			"add_to_cart": "Ajouter au caddy",
-			"add_to_wishlist": "Ajouter à la liste de souhait",
+			"add_to_wishlist": "Ajouter aux favoris",
 			"from_text_html": "À partir de {{ price }}"
 		}
 	},
