@@ -1,3 +1,4 @@
+/* global theme */
 const LOCAL_STORAGE_WISHLIST_KEY = 'shopify-wishlist';
 const LOCAL_STORAGE_DELIMITER = ',';
 const BUTTON_ACTIVE_CLASS = 'active';
@@ -77,7 +78,7 @@ const setupButtons = buttons => {
 			updateWishlist(productHandle);
 			updateCounter();
 			$button.classList.toggle(BUTTON_ACTIVE_CLASS);
-			$button.innerHTML = 'Article ajoué à vos favoris';
+			$button.innerHTML = theme.strings.addedToWishlist;
 		});
 
 		return true;
@@ -106,8 +107,7 @@ const setupGrid = grid => {
 		})
 		.then(() => {
 			if (0 === grid.innerHTML.length) {
-				grid.innerHTML =
-					'<div class="col-12"><p>Aucun article à afficher dans votre liste de souhait</p></div>';
+				grid.innerHTML = `<div class="col-12"><p>${theme.strings.noProductsInWishlist}</p></div>`;
 			}
 		});
 };

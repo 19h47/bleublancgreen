@@ -102,10 +102,12 @@
 	},
 	"page": {
 		"wishlist": {
-			"empty_list": "Il semble que vous n'ayez pas encore créé de wishlist...",
+			"empty_list": "Il semble que vous n'ayez pas encore ajouté de favori...",
 			"start_shopping": "Commencer",
-			"loader_list": "Chargement de votre wishlist personnalisée ...",
-			"remove": "Retirer des favoris"
+			"loader_list": "Chargement de vos favoris personnalisée ...",
+			"remove": "Retirer des favoris",
+			"product_added": "Produit ajouté à vos favoris",
+			"no_products": "Aucun produits à afficher dans vos favoris"
 		}
 	},
 	"menu": {
@@ -118,10 +120,15 @@
 	},
 	"products": {
 		"product": {
+			"regular_price": "Prix régulier",
+			"sold_out": "Épuisé",
+			"unavailable": "Non disponible",
+			"on_sale": "En solde",
+			"on_sale_from_html": "En solde {{ price }}",
+			"from_text_html": "À partir de {{ price }}",
 			"quantity": "Quantité",
-			"add_to_cart": "Ajouter au caddy",
-			"add_to_wishlist": "Ajouter aux favoris",
-			"from_text_html": "À partir de {{ price }}"
+			"add_to_cart": "Ajouter au panier",
+			"add_to_wishlist": "Ajouter aux favoris"
 		}
 	},
 	"cart": {
