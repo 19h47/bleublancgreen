@@ -24,6 +24,21 @@
 			"create_account": "Créer un compte"
 		}
 	},
+	"gift_cards": {
+		"issued": {
+			"title": "Votre carte-cadeau {{ shop }} d'une valeur de {{ value }}!",
+			"subtext": "Voici votre carte-cadeau!",
+			"disabled": "Désactivée",
+			"expired": "Expirée le {{ expiry }}",
+			"active": "Expire le {{ expiry }}",
+			"redeem": "Entrez ce code lors du paiement pour utiliser votre carte-cadeau",
+			"shop_link": "Boutique",
+			"print": "Imprimer",
+			"remaining_html": "{{ balance }} restant",
+			"add_to_apple_wallet": "Ajouter à Apple Wallet",
+			"initial_value": "Valeur de la carte-cadeau : {{ value }}"
+		}
+	},
 	"customer": {
 		"register": {
 			"title": "Créer un compte",
