@@ -47,7 +47,13 @@
 
 				{{ customer.default_address | format_address }}
 
-				<a class="Button w-100 d-block margin-top-3" href="/account/addresses">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a>
+				<a class="Button w-100 d-block margin-top-3" href="/account/addresses">
+					{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
+				</a>
+
+				<a class="Button w-100 d-block margin-top-3" href="/account/logout">
+					{{ 'customer.account.log_out' | t }}
+				</a>
 
 			</div>
 		</div>

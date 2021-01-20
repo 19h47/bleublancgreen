@@ -102,10 +102,16 @@
 
 						<p class="text-align-right">{{ 'cart.general.subtotal' | t }}</p>
 						<p class="text-align-right">{{ cart.total_price | money }}</p>
+
 						{% if cart.total_discounts > 0 %}
-							<p class="text-align-right">{{ 'cart.general.savings' | t }} {{ cart.total_discounts | money }}</p>
+							<p class="text-align-right">
+								{{ 'cart.general.savings' | t }} {{ cart.total_discounts | money }}
+							</p>
 						{% endif %}
-						<p class="text-align-right">{{ 'cart.general.shipping_at_checkout' | t }}</p>
+
+						<p class="text-align-right">
+							{{ 'cart.general.shipping_at_checkout' | t }}
+						</p>
 
 						<p class="text-align-right">
 							<button class="Button w-100 margin-bottom-1 w-md-auto margin-bottom-md-0 margin-right-md-1" type="submit" name="update">

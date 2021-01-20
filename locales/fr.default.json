@@ -67,17 +67,44 @@
 			"subtext": "Nous vous ferons parvenir un courriel pour réinitialiser votre mot de passe.",
 			"success": "Nous vous avons fait parvenir un courriel pour réinitialiser votre mot de passe."
 		},
-		"order": {
-			"product": "Produit"
-		},
 		"orders": {
 			"title": "Historique des commandes",
+			"order_number": "Commande",
+			"date": "Date",
+			"payment_status": "Statut du paiement",
+			"fulfillment_status": "Statut du traitement de la commande",
+			"total": "Total",
 			"none": "Vous n'avez pas placé de commande à ce jour."
+		},
+		"order": {
+			"title": "Commande {{ name }}",
+			"date": "Placée le {{ date }}",
+			"cancelled": "Commande annulée le {{ date }}",
+			"cancelled_reason": "Motif: {{ reason }}",
+			"billing_address": "Adresse de facturation",
+			"payment_status": "Statut du paiement",
+			"shipping_address": "Adresse de livraison",
+			"fulfillment_status": "Statut du traitement de la commande",
+			"discount": "Rabais appliqué",
+			"shipping": "Livraison",
+			"tax": "Taxes",
+			"product": "Produit",
+			"sku": "SKU",
+			"price": "Prix",
+			"quantity": "Quantité",
+			"total": "Total",
+			"fulfilled_at": "Date traitée",
+			"track_shipment": "Retracer l'envoi",
+			"tracking_url": "Lien de suivi",
+			"tracking_company": "Compagnie",
+			"tracking_number": "Numéro de suivi",
+			"subtotal": "Sous-total"
 		},
 		"account": {
 			"title": "Mon compte",
 			"details": "Détails du compte",
 			"view_addresses": "Voir les adresses",
+			"log_out": "Se déconnecter",
 			"return": "Retour aux détails du compte"
 		},
 		"addresses": {
