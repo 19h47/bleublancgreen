@@ -61,9 +61,7 @@ register('product', {
 	},
 
 	getProductJson(handle) {
-		return fetch(`/products/${handle}.js`).then(response => {
-			return response.json();
-		});
+		return fetch(`/products/${handle}.js`).then(response => response.json());
 	},
 
 	onFormOptionChange(event) {

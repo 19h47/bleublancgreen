@@ -8,7 +8,7 @@ const webpack = require('webpack');
 
 // Plugins
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const dotenv = require('dotenv');
@@ -16,10 +16,6 @@ const dotenv = require('dotenv');
 const resolve = require('./webpack.utils');
 
 dotenv.config({ path: resolve('.env') });
-
-const manifestPlugin = new ManifestPlugin({
-	publicPath: 'assets/',
-});
 
 module.exports = {
 	output: {
@@ -161,7 +157,9 @@ module.exports = {
 		],
 	},
 	plugins: [
-		manifestPlugin,
+		new WebpackManifestPlugin({
+			publicPath: 'assets/',
+		}),
 		new SpriteLoaderPlugin({ plainSprite: true }),
 		new CleanWebpackPlugin({
 			cleanOnceBeforeBuildPatterns: [resolve('dist')],

@@ -2,7 +2,7 @@
 	"general": {
 		"404": {
 			"title": "404 - Page non trouvée",
-			"subtext_html": "Cette page n'est pas disponible. <a class=\"Button d-block w-100 margin-top-3\" href=\"/collections/all\">Retourner au magasinage</a>"
+			"subtext_html": "Cette page n'est pas disponible. <a class=\"Button d-block w-100 margin-top-3\" href=\"/collections/all\">Retour à la boutique</a>"
 		},
 		"social": {
 			"share_on_facebook": "Partager",
@@ -13,6 +13,12 @@
 				"share_on_twitter": "Tweeter sur Twitter",
 				"share_on_pinterest": "Épingler sur Pinterest"
 			}
+		},
+		"newsletter_form": {
+			"newsletter_email": "Soyez au courant",
+			"email_placeholder": "Adresse courriel",
+			"confirmation": "Merci pour votre abonnement",
+			"submit": "S'inscrire"
 		}
 	},
 	"layout": {
@@ -184,7 +190,7 @@
 			"checkout": "Procéder au paiement",
 			"empty": "Votre panier est vide.",
 			"cookies_required": "Activer les cookies pour utiliser le panier",
-			"continue_browsing_html": "<a href=\"/collections/all\">Retourner au magasinage</a>.",
+			"continue_browsing_html": "<a href=\"/collections/all\">Retour à la boutique</a>.",
 			"item_quantity": "Quantité de l'article",
 			"savings": "Vous économisez"
 		},

@@ -13,24 +13,29 @@
                         {% endfor %}
                     </ul>
                 {% endif %}
-            </div>
-            <div class="col-12 col-md-4 margin-top-3 margin-top-md-0">
-                <h3 class="Footer__title">Newsletter</h3>
-                <form action="" class="Form validate" id="mc-embedded-subscribe-form-footer" method="post" name="mc-embedded-subscribe-form" novalidate="true">
-                    <div class="Form__group">
-                        <input class="d-none" id="mce-FNAME-footer" name="FNAME" type="text" value="test"/>
-                        <input class="d-none" id="mce-LNAME-footer" name="LNAME" type="text" value="test"/>
-                        <input class="d-none" id="mce-MMERGE6-footer" name="MMERGE6" type="text" value="test"/>
-                        <input class="d-none" id="mce-MMERGE4-footer" name="MMERGE4" type="text" value="test"/>
+			</div>
 
-                        <input class="Input d-block w-100 margin-bottom-2" type="email" name="EMAIL" id="mce-EMAIL-footer" value="" placeholder="{{ 'newsletter_form.email_placeholder' | t }}" title="The domain portion of the email address is invalid (the portion after the @)." pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" required=""/>
-                        <input class="Input d-block w-100 button" type="submit" value="{{ 'newsletter_form.submit' | t }}" name="subscribe" id="mc-embedded-subscribe"/>
-                        <div class="mc-status"></div>
-                    </div>
-                    <div aria-hidden="true" class="Form__group" style="position: absolute; left: -5000px;">
-                        <input name="b__" tabindex="-1" type="text" value=""/>
-                    </div>
-                </form>
+
+
+            <div class="col-12 col-md-4 margin-top-3 margin-top-md-0">
+				<h3 class="Form validate Footer__title">Newsletter</h3>
+				{% form 'customer' %}
+					{{ form.errors | default_errors }}
+
+					{% if form.posted_successfully? %}
+						<div>{{ 'general.newsletter_form.confirmation' | t }}</div>
+					{% else %}
+						<div class="Form__group">
+							<input type="hidden" name="contact[tags]" value="newsletter">
+							<input class="Input d-block w-100 margin-bottom-2" type="email" name="contact[email]" id="Email" value="{% if customer.email != blank %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.email_placeholder' | t }}" autocorrect="off" autocapitalize="off">
+							<button class="Input d-block w-100 margin-bottom-2" type="submit" name="commit" id="Subscribe">
+								{{ 'general.newsletter_form.submit' | t }}
+							</button>
+						</div>
+
+					  {% endif %}
+				{% endform %}
+
             </div>
         </div>
         <div class="row margin-top-6">
