@@ -23,14 +23,14 @@
 
 								{% for item in cart.items %}
 
-								{% comment %}
+									{% comment %}
 
-								Cart Item Template
-								=====================
-								The data-label attributes on <td> elements are mobile-friendly
-								helpers used for responsive-table labels
+									Cart Item Template
+									=====================
+									The data-label attributes on <td> elements are mobile-friendly
+									helpers used for responsive-table labels
 
-								{% endcomment %}
+									{% endcomment %}
 
 									<tr class="responsive-table-row">
 
@@ -135,7 +135,7 @@
 					<h1>{{ 'cart.general.title' | t }}</h1>
 
 					{% comment %}
-					Cart empty state
+						Cart empty state
 					{% endcomment %}
 					<div class="supports-cookies">
 						<p>{{ 'cart.general.empty' | t }}</p>
@@ -143,14 +143,15 @@
 					</div>
 
 					{% comment %}
-					Cart no cookies state
-					---------------------
-					Browser cookies are required to use the cart. If cookies aren't enabled in the
-					browser a message is displayed prompting the user to enable them.
+						Cart no cookies state
+						---------------------
+						Browser cookies are required to use the cart. If cookies aren't enabled in the
+						browser a message is displayed prompting the user to enable them.
 					{% endcomment %}
 					<div class="supports-no-cookies">
 						<p>{{ 'cart.general.cookies_required' | t }}</p>
 					</div>
+
 				</div>
 			</div>
 		</div>

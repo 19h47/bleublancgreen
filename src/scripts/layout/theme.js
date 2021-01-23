@@ -16,7 +16,7 @@ const cookiesEnabled = () => {
 		cookieEnabled = -1 !== document.cookie.indexOf('testcookie');
 	}
 	return cookieEnabled;
-}
+};
 
 require('../../styles/theme.scss');
 // import '../../styles/theme.scss.liquid';

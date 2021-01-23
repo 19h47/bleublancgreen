@@ -29,6 +29,7 @@ module.exports = {
 			utils: resolve('src/utils'),
 			icons: resolve('src/icons'),
 			svg: resolve('src/img/svg'),
+			jpg: resolve('src/img/jpg'),
 			png: resolve('src/img/png'),
 			scripts: resolve('src/scripts'),
 			stylesheets: resolve('src/stylesheets'),

@@ -15,3 +15,11 @@
 	border: 0;
 	clip: rect(0 0 0 0);
 }
+
+.supports-no-cookies:not(html) {
+	display: none;
+
+	html.supports-no-cookies & {
+		display: block;
+	}
+}
