@@ -217,5 +217,8 @@
 			"send": "Envoyer",
 			"post_success": "Merci de nous avoir avoir contacté. Nous vous reviendrons le plus rapidement possible."
 		}
+	},
+	"date_formats": {
+		"month_day_year": "%d %B, %Y"
 	}
 }
