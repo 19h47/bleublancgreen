@@ -24,8 +24,16 @@
 	}
 
 	&__thumbnails {
-		@extend %list-style-type-none;
+		@extend %list-style-type-none, %overflow-auto;
 		@extend .d-flex, .align-items-center;
+
+		-ms-overflow-style: none;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
 
 		li {
 		}

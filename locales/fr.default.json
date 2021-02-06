@@ -21,6 +21,33 @@
 			"submit": "S'inscrire"
 		}
 	},
+	"blogs": {
+		"article": {
+			"author_on_date_html": "Publié par {{ author }} le {{ date }}",
+			"comment_meta_html": "{{ author }} le {{ date }}",
+			"read_more": "Plus",
+			"read_more_title": "Plus: {{ title }}",
+			"by_author": "par {{ author }}",
+			"tags": "Mots clés"
+		},
+		"comments": {
+			"title": "Laissez un commentaire",
+			"name": "Nom",
+			"email": "Courriel",
+			"message": "Message",
+			"post": "Publier le commentaire",
+			"moderated": "Veuillez noter que les commentaires doivent être approuvés avant d'être affichés",
+			"success_moderated": "Votre commentaire a été soumis avec succès. Nous le publierons sous peu, suite à notre processus de modération.",
+			"success": "Votre commentaire a été publié avec succès!",
+			"with_count": {
+				"one": "{{ count }} commentaire",
+				"other": "{{ count }} commentaires"
+			}
+		},
+		"general": {
+			"categories": "Catégories"
+		}
+	},
 	"layout": {
 		"customer": {
 			"account": "Compte",

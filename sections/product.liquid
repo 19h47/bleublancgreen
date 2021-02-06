@@ -10,11 +10,11 @@
 
 				{% for image in product.images %}
 					{% capture wrapper_class %}
-				{%- unless featured_image == image -%}
-				  hide
-				{%- endunless -%}
+						{%- unless featured_image == image -%}
+							hide
+						{%- endunless -%}
+					{% endcapture %}
 
-				  {% endcapture %}
 					{% include 'responsive-image' with
 						image: image,
 						max_width: 700,
