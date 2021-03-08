@@ -41,8 +41,9 @@
         </a>
 
         <div>
-          {% if section.settings.blog_show_author %}
-            <span>{{ 'blogs.article.by_author' | t: author: article.author }}</span>
+
+					{% if section.settings.blog_show_author %}
+            <span>{{ 'blogs.article.author_on_date_html' | t: author: article.author }}</span>
           {% endif %}
 
           {% if section.settings.blog_show_date %}
@@ -50,6 +51,7 @@
               {{ article.published_at | time_tag: format: 'month_day_year' }}
             </p>
           {% endif %}
+
 
           <div>
             {% if article.excerpt.size > 0 %}
