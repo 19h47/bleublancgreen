@@ -37,10 +37,12 @@
 			</div>
 
 
-				{% comment %}
-					Article Previews
-					====================
-				{% endcomment %}
+			{% comment %}
+
+			Article Previews
+			====================
+
+			{% endcomment %}
 
 			<div class="row">
 
@@ -60,11 +62,7 @@
 
 						{% if article.image %}
 							<a href="{{ article.url }}">
-								{% include 'responsive-image' with
-									image: article.image,
-									max_width: 1024,
-									max_height: 1024
-								%}
+								{% include 'responsive-image' with image: article.image, max_width: 1024, max_height: 1024 %}
 							</a>
 						{% endif %}
 

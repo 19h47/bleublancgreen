@@ -19,8 +19,11 @@
 					{% endif %}
 
 					<h1>{{ article.title }}</h1>
+
+					{% comment %}
 					{% capture date %}{{ article.published_at | time_tag: format: 'month_day_year' }}{% endcapture %}
 					<p>{{ 'blogs.article.author_on_date_html' | t: author: article.author, date: date }}</p>
+					{% endcomment %}
 
 					<div class="rte">
 						{{ article.content }}
